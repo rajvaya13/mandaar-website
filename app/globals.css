@@ -1,26 +1,197 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Mandaar brand palette — refined for modern UI */
+  --color-mandaar: #0d3b2e;
+  --color-mandaar-deep: #082821;
+  --color-mandaar-soft: #1a5443;
+  --color-saffron: #d4a017;
+  --color-saffron-light: #e6b94a;
+  --color-saffron-deep: #a17a10;
+  --color-cream: #f7f1e3;
+  --color-cream-warm: #faf6ec;
+  --color-snow: #fbfaf7;
+  --color-ivory: #ffffff;
+  --color-rust: #8b3a2e;
+  --color-rust-light: #a85447;
+  --color-warm-gray: #8b7d6b;
+  --color-warm-gray-light: #b5a895;
+
+  /* Fonts */
+  --font-sans: var(--font-outfit), "Outfit", system-ui, sans-serif;
+  --font-display: var(--font-fraunces), "Fraunces", "Times New Roman", serif;
+
+  /* Shadows — premium soft shadows */
+  --shadow-card: 0 1px 2px rgba(13, 59, 46, 0.04), 0 4px 16px rgba(13, 59, 46, 0.06);
+  --shadow-card-hover: 0 4px 8px rgba(13, 59, 46, 0.06), 0 24px 48px rgba(13, 59, 46, 0.12);
+  --shadow-float: 0 30px 60px rgba(13, 59, 46, 0.15);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-snow);
+  color: #1a1a1a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== Grain texture (subtle premium feel) ===== */
+.grain {
+  position: relative;
+}
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ===== Reveal animations ===== */
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes reveal-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.reveal {
+  opacity: 0;
+}
+.reveal.is-visible {
+  animation: reveal-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.reveal-fade {
+  opacity: 0;
+}
+.reveal-fade.is-visible {
+  animation: reveal-in 1.2s ease-out forwards;
+}
+
+/* ===== Marquee infinite scroll ===== */
+@keyframes marquee-slide {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: marquee-slide 40s linear infinite;
+}
+
+/* ===== Soft ping (WhatsApp button) ===== */
+@keyframes soft-ping {
+  0% { transform: scale(1); opacity: 0.7; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+.soft-ping {
+  animation: soft-ping 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* ===== Floating shape animation (hero decorations) ===== */
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(2deg); }
+}
+.float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+@keyframes float-slower {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-18px) rotate(-3deg); }
+}
+.float-slower {
+  animation: float-slower 8s ease-in-out infinite;
+}
+
+/* ===== Slow rotation (decorative) ===== */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.spin-slow {
+  animation: spin-slow 40s linear infinite;
+}
+
+/* ===== Premium buttons ===== */
+.btn-magnetic {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              background-color 0.25s ease;
+}
+.btn-magnetic:hover {
+  transform: translateY(-2px) scale(1.015);
+}
+
+/* ===== Photo-realistic bowl visuals (used for product cards) ===== */
+.bowl-base {
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow:
+    inset 0 -20px 40px rgba(0, 0, 0, 0.4),
+    inset 0 8px 16px rgba(255, 255, 255, 0.12),
+    0 12px 32px rgba(0, 0, 0, 0.18),
+    0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.bowl-base::before {
+  /* Bright bowl rim highlight (top arc) */
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(ellipse 80% 30% at 50% 5%, rgba(255, 255, 255, 0.25) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 2;
+}
+.bowl-base::after {
+  /* Bowl edge shadow */
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+    inset 0 0 8px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Wood plate behind bowl */
+.plate-wood {
+  background:
+    radial-gradient(ellipse at center, #d4b896 0%, #b8956b 60%, #8b7050 100%),
+    linear-gradient(180deg, #c4a47a, #8b6b4a);
+  position: relative;
+}
+.plate-wood::before {
+  /* Wood grain texture */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      rgba(101, 67, 33, 0.04) 1px,
+      transparent 3px,
+      transparent 8px,
+      rgba(101, 67, 33, 0.06) 9px,
+      transparent 12px
+    );
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* ===== Decorative paisley dots ===== */
+.paisley-bg {
+  background-image: radial-gradient(circle, rgba(212, 160, 23, 0.18) 1px, transparent 1.5px);
+  background-size: 24px 24px;
 }
