@@ -6,7 +6,6 @@ export default function Heritage() {
       id="heritage"
       className="relative bg-mandaar text-cream px-6 md:px-14 py-24 md:py-32 overflow-hidden grain"
     >
-      {/* Ambient gradients */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -15,23 +14,19 @@ export default function Heritage() {
         }}
       />
 
-      {/* Decorative paisley pattern at edges */}
       <div className="absolute top-12 right-12 w-32 h-32 paisley-bg opacity-15 rounded-full pointer-events-none" />
       <div className="absolute bottom-20 left-12 w-40 h-40 paisley-bg opacity-15 rounded-full pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-[1fr_1.1fr] gap-12 lg:gap-20 items-center">
 
-        {/* === NEW HERITAGE VISUAL — VINTAGE CERTIFICATE === */}
+        {/* === HERITAGE VISUAL — vintage certificate with year 2018 === */}
         <Reveal variant="fade">
           <div className="relative aspect-[4/5] max-w-md mx-auto lg:mx-0">
-            {/* Outer ornate frame */}
             <div className="absolute inset-0 rounded-sm bg-cream shadow-[0_30px_80px_rgba(0,0,0,0.4)] grain">
-              {/* Inner frame border */}
               <div className="absolute inset-3 border-2 border-mandaar/80 rounded-sm">
                 <div className="absolute inset-2 border border-saffron/60 rounded-sm" />
               </div>
 
-              {/* Corner ornaments */}
               {[
                 "top-4 left-4",
                 "top-4 right-4 rotate-90",
@@ -53,16 +48,14 @@ export default function Heritage() {
                 </svg>
               ))}
 
-              {/* Content of the certificate */}
               <div className="absolute inset-0 flex flex-col items-center justify-center text-mandaar p-12 text-center">
                 <div className="text-[9px] tracking-[0.4em] uppercase mb-4 text-mandaar/60">
                   Certificate of
                 </div>
                 <div className="font-display italic text-3xl md:text-4xl mb-8 text-rust">
-                  Heritage
+                  Origin
                 </div>
 
-                {/* Horizontal ornament */}
                 <div className="flex items-center gap-3 mb-8">
                   <div className="w-12 h-px bg-mandaar/40" />
                   <svg width="20" height="20" viewBox="0 0 20 20" className="text-saffron">
@@ -74,16 +67,14 @@ export default function Heritage() {
                   <div className="w-12 h-px bg-mandaar/40" />
                 </div>
 
-                {/* Year */}
                 <div className="font-display text-7xl md:text-8xl font-light leading-none mb-4 text-mandaar">
-                  1987
+                  2018
                 </div>
 
                 <div className="text-[11px] tracking-[0.3em] uppercase mb-8 text-mandaar/60">
-                  Year of Founding
+                  The Year We Opened
                 </div>
 
-                {/* Bottom seal */}
                 <div className="border-t border-mandaar/20 pt-6 mt-auto">
                   <div className="text-[10px] tracking-[0.25em] uppercase text-mandaar/70 mb-1">
                     Sourced & Curated In
@@ -94,7 +85,6 @@ export default function Heritage() {
                 </div>
               </div>
 
-              {/* Aged paper subtle stain */}
               <div
                 className="absolute inset-0 pointer-events-none rounded-sm opacity-30"
                 style={{
@@ -104,7 +94,7 @@ export default function Heritage() {
               />
             </div>
 
-            {/* "Authentic Heritage" red wax seal */}
+            {/* Wax seal */}
             <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 w-24 h-24 md:w-28 md:h-28 rounded-full flex items-center justify-center text-center text-cream p-3 shadow-[0_15px_30px_rgba(139,58,46,0.6)] rotate-12 z-10"
               style={{
                 background: "radial-gradient(circle at 30% 30%, #a85447, #8b3a2e 60%, #5c2519 100%)",
@@ -112,13 +102,13 @@ export default function Heritage() {
             >
               <div>
                 <div className="font-display text-[10px] tracking-[0.2em] uppercase mb-0.5 text-saffron-light/90">
-                  Authentic
+                  Hand
                 </div>
                 <div className="font-display italic text-base md:text-lg leading-none">
-                  Mandaar
+                  Picked
                 </div>
                 <div className="font-display text-[10px] tracking-[0.2em] uppercase mt-0.5 text-saffron-light/90">
-                  Heritage
+                  Always
                 </div>
               </div>
             </div>
@@ -128,34 +118,34 @@ export default function Heritage() {
         <div>
           <Reveal>
             <div className="text-saffron text-xs font-medium tracking-[0.3em] uppercase mb-5">
-              Our Heritage
+              Our Approach
             </div>
           </Reveal>
           <Reveal delay={100}>
             <h2 className="font-display text-4xl md:text-5xl lg:text-[3.75rem] leading-[1.05] font-light tracking-tight mb-7">
-              Three generations,<br />
-              <span className="italic text-saffron-light">one promise</span>.
+              Sourced direct,<br />
+              <span className="italic text-saffron-light">sold honestly</span>.
             </h2>
           </Reveal>
           <Reveal delay={200}>
             <p className="text-cream/75 text-base md:text-lg leading-[1.8] mb-6">
-              It started in 1987, in a shop on Bhupalpura Main Road, just steps
-              from Gattani Hospital. Our founder believed every nut and date
-              that left the store had to be one he&apos;d serve at his own
-              family&apos;s table.
+              Mandaar opened in 2018, in a small shop on Bhupalpura Main Road —
+              just steps from Gattani Hospital. The founding rule was simple:
+              never sell a date, nut, or dried fruit that hadn&apos;t been
+              hand-graded and personally tasted first.
             </p>
           </Reveal>
           <Reveal delay={280}>
             <p className="text-cream/75 text-base md:text-lg leading-[1.8]">
-              Today, we still source the same way — directly from origin
-              growers in Kashmir, Iran, Jordan, and California. Hand-graded
-              with care. No middlemen, no shortcuts. The same shop, the same
-              standard.
+              Today, we source directly from origin growers in Kashmir, Iran,
+              Jordan, Turkey, and California. Hand-graded with care. No
+              middlemen, no shortcuts, no imported-then-resold. The same shop,
+              the same standard.
             </p>
           </Reveal>
           <Reveal delay={360}>
             <div className="font-display italic text-saffron-light text-xl mt-8">
-              — The Mandaar family
+              — Mandaar
             </div>
           </Reveal>
         </div>

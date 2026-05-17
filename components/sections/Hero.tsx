@@ -9,7 +9,7 @@ const slides = [
   {
     eyebrow: "From The Aravalli Hills",
     title: ["A Taste of", "Rajasthani Royalty,", "delivered fresh."],
-    desc: "For three generations, Mandaar has hand-picked the finest dates, nuts, and dried fruits — sourced directly from origin farms and curated in the heart of Udaipur.",
+    desc: "Mandaar hand-picks the finest dates, nuts, and dried fruits — sourced directly from origin farms in Kashmir, Jordan, Iran, and beyond, curated in the heart of Udaipur.",
   },
   {
     eyebrow: "Harvest Season 2026",
@@ -30,8 +30,6 @@ export default function Hero() {
   return (
     <section className="relative pt-24 pb-0 px-3 md:px-6 bg-snow">
       <div className="relative w-full mx-auto rounded-[1.75rem] md:rounded-[2.5rem] overflow-hidden h-[88vh] min-h-[640px] max-h-[920px] shadow-[0_30px_80px_rgba(13,59,46,0.25)]">
-
-        {/* ===== ELEGANT DARK BACKGROUND ===== */}
         <div
           className="absolute inset-0"
           style={{
@@ -43,10 +41,8 @@ export default function Hero() {
           }}
         />
 
-        {/* Paisley dot pattern decorative layer */}
         <div className="absolute inset-0 paisley-bg opacity-[0.08] pointer-events-none" />
 
-        {/* Decorative arabesque corner ornaments (SVG) */}
         <svg
           className="absolute top-8 left-8 w-32 h-32 text-saffron/15 hidden md:block pointer-events-none"
           viewBox="0 0 100 100"
@@ -76,13 +72,9 @@ export default function Hero() {
           <circle cx="35" cy="35" r="1" fill="currentColor" />
         </svg>
 
-        {/* Grain texture */}
         <div className="absolute inset-0 grain pointer-events-none opacity-60" />
 
-        {/* ===== MAIN GRID: TEXT LEFT, VISUAL RIGHT ===== */}
         <div className="relative z-10 h-full grid lg:grid-cols-[1.1fr_1fr] gap-4 lg:gap-12 items-center px-7 md:px-14 lg:px-20">
-
-          {/* ===== TEXT CONTENT ===== */}
           <div className="text-cream">
             <Reveal key={`eyebrow-${active}`}>
               <div className="inline-flex items-center gap-3 text-saffron-light text-[10px] md:text-xs font-medium tracking-[0.3em] uppercase mb-6 md:mb-8 bg-saffron/10 backdrop-blur-sm border border-saffron/30 px-4 py-2 rounded-full">
@@ -145,11 +137,8 @@ export default function Hero() {
             </Reveal>
           </div>
 
-          {/* ===== RIGHT VISUAL — ELEGANT ROYAL SEAL ===== */}
           <Reveal variant="fade" delay={300}>
             <div className="relative w-full aspect-square max-w-[460px] mx-auto hidden lg:block">
-
-              {/* Outer rotating ring with text */}
               <div className="absolute inset-0 spin-slow">
                 <svg viewBox="0 0 400 400" className="w-full h-full">
                   <defs>
@@ -160,17 +149,15 @@ export default function Hero() {
                   </defs>
                   <text className="fill-saffron/60" style={{ fontFamily: 'Fraunces, serif' }} fontSize="13" letterSpacing="3">
                     <textPath href="#circle-text">
-                      • MANDAAR • UDAIPUR • EST. 1987 • RAJASTHAN • PREMIUM DRY FRUITS • SINCE 1987 •
+                      • MANDAAR • UDAIPUR • EST. 2018 • RAJASTHAN • PREMIUM DRY FRUITS • DIRECT SOURCED •
                     </textPath>
                   </text>
                 </svg>
               </div>
 
-              {/* Decorative middle ring */}
               <div className="absolute inset-[14%] rounded-full border-2 border-saffron/20" />
               <div className="absolute inset-[16%] rounded-full border border-saffron/30" />
 
-              {/* Dotted dashed inner ring */}
               <div
                 className="absolute inset-[20%] rounded-full"
                 style={{
@@ -178,7 +165,6 @@ export default function Hero() {
                 }}
               />
 
-              {/* Center filled circle — date "product shot" */}
               <div className="absolute inset-[24%] rounded-full overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
                 <div
                   className="absolute inset-0"
@@ -195,7 +181,6 @@ export default function Hero() {
                     `,
                   }}
                 />
-                {/* Bowl rim highlight */}
                 <div
                   className="absolute inset-0 rounded-full pointer-events-none"
                   style={{
@@ -207,7 +192,6 @@ export default function Hero() {
                 />
               </div>
 
-              {/* Decorative dots around the ring (8-pointed accents) */}
               {[0, 45, 90, 135, 180, 225, 270, 315].map((deg) => (
                 <div
                   key={deg}
@@ -218,7 +202,6 @@ export default function Hero() {
                 />
               ))}
 
-              {/* Floating Medjoul tag — bottom left */}
               <div className="absolute bottom-0 left-0 bg-snow/95 backdrop-blur-md px-4 py-3 rounded-2xl shadow-[0_15px_40px_rgba(0,0,0,0.3)] flex items-center gap-3 float-slow z-20">
                 <div
                   className="w-10 h-10 rounded-full"
@@ -237,7 +220,6 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* Rating card — top right */}
               <div className="absolute top-0 right-0 bg-snow/95 backdrop-blur-md px-5 py-3 rounded-2xl shadow-[0_15px_40px_rgba(0,0,0,0.3)] text-center float-slower z-20">
                 <div className="text-saffron text-xs tracking-[3px] mb-0.5">
                   ★ ★ ★ ★ ★
@@ -248,7 +230,6 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* MOBILE visual — simpler version */}
             <div className="relative w-full max-w-[280px] mx-auto aspect-square lg:hidden mt-4">
               <div className="absolute inset-0 spin-slow">
                 <svg viewBox="0 0 400 400" className="w-full h-full">
@@ -257,7 +238,7 @@ export default function Hero() {
                   </defs>
                   <text className="fill-saffron/60" style={{ fontFamily: 'Fraunces, serif' }} fontSize="15" letterSpacing="3">
                     <textPath href="#circle-text-mob">
-                      • MANDAAR • UDAIPUR • EST. 1987 • PREMIUM •
+                      • MANDAAR • UDAIPUR • EST. 2018 • PREMIUM •
                     </textPath>
                   </text>
                 </svg>
@@ -279,13 +260,11 @@ export default function Hero() {
           </Reveal>
         </div>
 
-        {/* Free shipping badge top right */}
         <div className="absolute top-7 md:top-10 right-6 md:right-10 z-30 bg-mandaar-deep/80 backdrop-blur-sm border border-saffron/30 text-saffron px-4 py-2 rounded-full text-[10px] font-semibold tracking-[0.15em] uppercase items-center gap-2 hidden md:inline-flex">
           <span className="w-1.5 h-1.5 rounded-full bg-saffron animate-pulse" />
           Free Shipping ₹999+
         </div>
 
-        {/* ===== SLIDE INDICATOR DOTS ===== */}
         <div className="absolute bottom-12 md:bottom-14 left-7 md:left-14 lg:left-20 z-20 flex items-center gap-3">
           {slides.map((_, i) => (
             <button
@@ -301,7 +280,6 @@ export default function Hero() {
           ))}
         </div>
 
-        {/* ===== WAVY BOTTOM EDGE ===== */}
         <svg
           className="absolute bottom-0 left-0 w-full h-8 md:h-12"
           viewBox="0 0 1440 60"

@@ -4,37 +4,27 @@ import { CheckIcon } from "lucide-react";
 
 const milestones = [
   {
-    year: "1987",
-    title: "The first shop opens",
-    desc: "Our grandfather opens a small dry fruits shop on Bhupalpura Main Road, near Gattani Hospital. He insists every product be tasted before being sold.",
+    year: "2018",
+    title: "The shop opens",
+    desc: "Mandaar opens on Bhupalpura Main Road in Udaipur, near Gattani Hospital. One founding rule from day one: every product is hand-graded and personally tasted before going on the shelves.",
   },
   {
-    year: "1998",
-    title: "First direct sourcing trip",
-    desc: "We travel to Kashmir for the first time, returning with walnuts directly from Pampore farmers. The middleman is cut out for good.",
-  },
-  {
-    year: "2010",
-    title: "International origins",
-    desc: "Direct sourcing partnerships established with growers in Jordan (Medjoul dates), Iran (pistachios), and Turkey (apricots).",
-  },
-  {
-    year: "2019",
-    title: "Family hands take over",
-    desc: "The third generation joins. We add vacuum-sealing, climate-controlled storage, and pan-India shipping while keeping every quality standard.",
+    year: "The Years Since",
+    title: "Building direct partnerships",
+    desc: "Trip by trip, supplier by supplier — we replace middlemen with farmer-direct relationships. Kashmiri walnut growers in Pampore. Jordanian Medjoul date farms in the Jordan Valley. Iranian pistachio orchards in Kerman. Turkish apricot growers in Malatya.",
   },
   {
     year: "2026",
-    title: "Mandaar online",
-    desc: "Three generations later, the same shop on Bhupalpura Road now ships across India through this website. Same standard. Same family.",
+    title: "Mandaar goes online",
+    desc: "Eight years after opening, Mandaar launches online — the same hand-picked, hand-graded products, now shipping across India in 2–4 days.",
   },
 ];
 
 const values = [
   "Hand-picked directly from origin farms — no middlemen",
   "Vacuum-sealed within hours of arrival at our warehouse",
-  "Each batch tasted and graded by family members before sale",
-  "100% natural, no sulphur, no added sugar, no preservatives",
+  "Every batch tasted and graded by the owner before being sold",
+  "100% natural — no sulphur, no added sugar, no preservatives",
   "FSSAI certified, GST registered, fully traceable supply chain",
   "If you're not happy with any order, we replace it. No questions.",
 ];
@@ -47,10 +37,10 @@ export default function AboutPage() {
         eyebrow="Our Story"
         title={
           <>
-            Three generations of <span className="italic text-saffron">care</span>
+            Sourced direct, <span className="italic text-saffron">sold honestly</span>
           </>
         }
-        description="Mandaar isn't a business decision. It's a 38-year-old family promise."
+        description="Mandaar opened in 2018 with one promise: source the finest dry fruits directly from origin farms, and sell only what we'd serve at our own table."
       />
 
       {/* === FOUNDER STORY === */}
@@ -59,30 +49,28 @@ export default function AboutPage() {
           <Reveal>
             <div className="space-y-6 text-warm-gray leading-[1.85] text-base md:text-lg">
               <p>
-                It started in 1987, on a quiet stretch of Bhupalpura Main Road in
-                Udaipur — a few hundred metres from Gattani Hospital, in a shop
-                no bigger than a small living room.
+                It started in 2018, on a quiet stretch of Bhupalpura Main Road
+                in Udaipur — a few hundred metres from Gattani Hospital, in a
+                shop no bigger than a small living room.
               </p>
               <p>
-                Our grandfather had a simple rule: he wouldn&apos;t sell a single
-                date he hadn&apos;t personally tasted. He would sit on a small
-                wooden stool by the entrance, open every fresh sack that
-                arrived from suppliers, and decide right there whether it was
-                going on the shelves — or going straight back. Customers
-                started coming from the next neighbourhood, then from across
-                Udaipur, and eventually from Mount Abu, Chittor, even Jaipur.
+                The founding rule was simple: every date, every nut, every
+                batch had to be hand-graded and personally tasted by the owner
+                before it could go on the shelves. If it didn&apos;t pass, it
+                didn&apos;t sell — it went straight back to the supplier.
               </p>
               <p>
-                The shop is still on the same road. The wooden stool is still
-                inside.
+                Customers came at first from the next neighbourhood, then from
+                across Udaipur, and word travelled — to Mount Abu, Chittor, even
+                Jaipur. The shop is still on the same road.
               </p>
               <p>
-                What&apos;s changed: we now travel ourselves to Kashmir each
-                October for the walnut harvest, to Pampore where light-coloured
-                halves come straight from the cold-press shed. We&apos;ve flown
-                to Jordan to walk the Medjoul date farms in the Jordan Valley.
-                Our pistachios come from a single grower in Kerman, Iran.
-                Apricots from Malatya in eastern Turkey.
+                What&apos;s grown since: we now travel ourselves to Kashmir
+                each October for the walnut harvest, to Pampore where
+                light-coloured halves come straight from the cold-press shed.
+                We&apos;ve flown to Jordan to walk the Medjoul date farms in
+                the Jordan Valley. Our pistachios come from a single grower in
+                Kerman, Iran. Apricots from Malatya in eastern Turkey.
               </p>
               <p>
                 No middlemen. No imported-then-resold. Every product on our
@@ -90,20 +78,19 @@ export default function AboutPage() {
                 of the time, to the person who picked it.
               </p>
               <p>
-                Three generations have passed since 1987. The shop, the family
-                name, and the standard have not.
+                Eight years on. One shop. One standard. The same founding rule.
               </p>
             </div>
           </Reveal>
           <Reveal delay={200}>
             <div className="font-display italic text-saffron text-2xl text-center mt-12">
-              — The Mandaar family
+              — Mandaar
             </div>
           </Reveal>
         </div>
       </section>
 
-      {/* === TIMELINE — REWRITTEN === */}
+      {/* === TIMELINE === */}
       <section className="bg-snow px-6 md:px-14 py-24">
         <div className="max-w-5xl mx-auto">
           <Reveal>
@@ -112,14 +99,12 @@ export default function AboutPage() {
                 Our Timeline
               </div>
               <h2 className="font-display text-3xl md:text-5xl text-mandaar font-normal tracking-tight">
-                38 years, <span className="italic text-saffron">one shop</span>
+                From a single shop, <span className="italic text-saffron">step by step</span>
               </h2>
             </div>
           </Reveal>
 
-          {/* Timeline */}
           <div className="relative">
-            {/* Vertical line */}
             <div className="absolute left-[11px] md:left-1/2 top-2 bottom-2 w-px bg-mandaar/15 md:-translate-x-px" />
 
             {milestones.map((m, i) => {
@@ -127,10 +112,8 @@ export default function AboutPage() {
               return (
                 <Reveal key={m.year} delay={i * 100}>
                   <div className="relative mb-14 md:mb-20 last:mb-0">
-                    {/* Dot */}
                     <div className="absolute left-[11px] md:left-1/2 top-2 -translate-x-1/2 w-3 h-3 rounded-full bg-saffron border-4 border-snow shadow-md z-10" />
 
-                    {/* Mobile layout: single column with left padding */}
                     <div className="md:hidden pl-10">
                       <div className="font-display text-saffron text-xs font-semibold tracking-[0.25em] uppercase mb-2">
                         {m.year}
@@ -143,9 +126,7 @@ export default function AboutPage() {
                       </p>
                     </div>
 
-                    {/* Desktop layout: two columns with alternating sides */}
                     <div className="hidden md:grid md:grid-cols-2 md:gap-16 items-start">
-                      {/* Big year number side */}
                       <div
                         className={
                           isEven
@@ -153,12 +134,11 @@ export default function AboutPage() {
                             : "col-start-2 text-left pl-4"
                         }
                       >
-                        <div className="font-display text-7xl lg:text-8xl font-light text-mandaar/15 leading-none">
+                        <div className="font-display text-5xl lg:text-7xl font-light text-mandaar/15 leading-none">
                           {m.year}
                         </div>
                       </div>
 
-                      {/* Content side */}
                       <div
                         className={
                           isEven

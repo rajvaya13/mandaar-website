@@ -46,7 +46,6 @@ export default function SignupPage() {
       <div className="absolute bottom-0 left-0 w-32 h-32 paisley-bg opacity-30 rounded-full pointer-events-none" />
 
       <div className="relative max-w-5xl mx-auto grid lg:grid-cols-[1fr_1.1fr] gap-8 lg:gap-12 items-center">
-        {/* Left: Marketing */}
         <div className="hidden lg:block">
           <div className="text-rust text-xs font-medium tracking-[0.3em] uppercase mb-4">
             Join Mandaar
@@ -56,7 +55,7 @@ export default function SignupPage() {
             <span className="italic text-saffron">inner circle</span>.
           </h1>
           <p className="text-warm-gray text-base leading-relaxed mb-9">
-            38 years of curating premium dry fruits — now at your fingertips. Create an account in 30 seconds.
+            Premium dry fruits, hand-picked from origin farms — now at your fingertips. Create an account in 30 seconds.
           </p>
 
           <ul className="space-y-4">
@@ -71,7 +70,6 @@ export default function SignupPage() {
           </ul>
         </div>
 
-        {/* Right: Signup form */}
         <div className="bg-snow rounded-3xl p-8 md:p-10 shadow-card-hover w-full max-w-md mx-auto lg:max-w-none">
           <div className="lg:hidden text-center mb-8">
             <div className="text-rust text-xs font-medium tracking-[0.3em] uppercase mb-3">

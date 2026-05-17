@@ -23,7 +23,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
-  const [cartCount] = useState(0); // Wired up in Phase 4
+  const [cartCount] = useState(0);
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 20);
@@ -32,7 +32,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handler);
   }, []);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (mobileOpen) {
       document.body.style.overflow = "hidden";
@@ -55,18 +54,16 @@ export default function Navbar() {
         )}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-14 flex items-center justify-between gap-4">
-          {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group flex-shrink-0">
             <span className="w-2 h-2 rounded-full bg-saffron" />
             <span className="font-display text-mandaar text-xl md:text-2xl font-medium">
               Mandaar
             </span>
             <span className="hidden md:inline text-warm-gray text-[10px] tracking-[0.2em] uppercase ml-2 pl-3 border-l border-mandaar/15">
-              Udaipur · Est. 1987
+              Udaipur · Est. 2018
             </span>
           </Link>
 
-          {/* Center nav */}
           <div className="hidden lg:flex items-center gap-9">
             {navLinks.map((link) => (
               <Link
@@ -79,9 +76,7 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Right actions */}
           <div className="flex items-center gap-1 md:gap-2">
-            {/* Search */}
             <button
               onClick={() => setSearchOpen(true)}
               className="w-10 h-10 rounded-full hover:bg-mandaar/5 flex items-center justify-center text-mandaar transition-colors"
@@ -90,7 +85,6 @@ export default function Navbar() {
               <SearchIcon size={18} strokeWidth={1.8} />
             </button>
 
-            {/* Cart */}
             <Link
               href="/cart"
               className="w-10 h-10 rounded-full hover:bg-mandaar/5 flex items-center justify-center text-mandaar transition-colors relative"
@@ -104,7 +98,6 @@ export default function Navbar() {
               )}
             </Link>
 
-            {/* Sign In */}
             <Link
               href="/login"
               className="hidden md:inline-flex items-center gap-2 bg-mandaar text-cream px-5 py-2.5 rounded-full text-sm font-medium hover:bg-mandaar-deep transition-colors ml-1"
@@ -112,7 +105,6 @@ export default function Navbar() {
               Sign In
             </Link>
 
-            {/* Mobile menu */}
             <button
               onClick={() => setMobileOpen(true)}
               className="lg:hidden w-10 h-10 rounded-full hover:bg-mandaar/5 flex items-center justify-center text-mandaar transition-colors"
@@ -124,7 +116,6 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile menu overlay */}
       {mobileOpen && (
         <div className="fixed inset-0 z-[60] bg-snow lg:hidden overflow-y-auto">
           <div className="flex items-center justify-between p-6">
@@ -184,7 +175,6 @@ export default function Navbar() {
         </div>
       )}
 
-      {/* Search modal */}
       <SearchModal open={searchOpen} onClose={() => setSearchOpen(false)} />
     </>
   );
