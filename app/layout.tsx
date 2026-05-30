@@ -21,7 +21,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Mandaar — Udaipur's Finest Dry Fruits Since 1987",
+  title: "Mandaar — Udaipur's Finest Dry Fruits Since 2018",
   description:
     "Premium dates, nuts, and dried fruits from Udaipur, Rajasthan. Hand-picked, vacuum-sealed, delivered fresh across India.",
 };

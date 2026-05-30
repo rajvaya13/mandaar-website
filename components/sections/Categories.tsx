@@ -7,93 +7,94 @@ type Category = {
   accentColor: string;
   bgGradient: string;
   bowl: string;
+  badge?: string;
 };
 
+// 6 featured categories on homepage + Gift Hampers (7 total)
 const categories: Category[] = [
   {
-    name: "Dates",
-    count: "18 varieties",
-    href: "/shop/dates",
-    accentColor: "#5c2e0b",
-    bgGradient: "linear-gradient(135deg, #faf6ec 0%, #f0e4cc 100%)",
+    name: "Mamra Almonds",
+    count: "4 grades · Premium",
+    href: "/shop?cat=mamra",
+    accentColor: "#4a1808",
+    bgGradient: "linear-gradient(135deg, #fdf0ea 0%, #f0c8b4 100%)",
     bowl: `
-      radial-gradient(ellipse 25% 30% at 30% 30%, #5c2e0b 0%, #3d1f06 60%, transparent 75%),
-      radial-gradient(ellipse 8% 8% at 28% 26%, rgba(255, 220, 180, 0.5) 0%, transparent 100%),
-      radial-gradient(ellipse 22% 28% at 60% 35%, #6b3818 0%, #4a240a 60%, transparent 75%),
-      radial-gradient(ellipse 7% 7% at 58% 31%, rgba(255, 220, 180, 0.5) 0%, transparent 100%),
-      radial-gradient(ellipse 28% 32% at 45% 70%, #5c2e0b 0%, #3d1f06 60%, transparent 75%),
-      radial-gradient(ellipse 9% 9% at 43% 66%, rgba(255, 220, 180, 0.5) 0%, transparent 100%),
-      radial-gradient(circle at 50% 50%, #3d2818 0%, #2a1808 80%, #1a1004 100%)
+      radial-gradient(ellipse 14% 22% at 30% 30%, #9a4a20 0%, #5c2008 70%, transparent 80%),
+      radial-gradient(ellipse 13% 21% at 60% 32%, #8b3d18 0%, #4a1808 70%, transparent 80%),
+      radial-gradient(ellipse 15% 23% at 45% 60%, #9a4a20 0%, #5c2008 70%, transparent 80%),
+      radial-gradient(ellipse 13% 21% at 70% 65%, #8b3d18 0%, #4a1808 70%, transparent 80%),
+      radial-gradient(circle at 50% 50%, #4a1808 0%, #2a0f04 80%, #1a0802 100%)
     `,
+    badge: "FINEST",
   },
   {
     name: "Cashews",
-    count: "12 varieties",
-    href: "/shop/cashews",
+    count: "3 grades",
+    href: "/shop?cat=cashews",
     accentColor: "#8b7050",
     bgGradient: "linear-gradient(135deg, #fff8ec 0%, #f5e8cf 100%)",
     bowl: `
       radial-gradient(ellipse 24% 18% at 30% 30%, #f0d4a0 0%, #c4a47a 70%, transparent 80%),
-      radial-gradient(ellipse 8% 6% at 28% 26%, rgba(255, 245, 220, 0.65) 0%, transparent 100%),
       radial-gradient(ellipse 22% 16% at 60% 35%, #e8c89e 0%, #b89678 70%, transparent 80%),
-      radial-gradient(ellipse 7% 5% at 58% 31%, rgba(255, 245, 220, 0.65) 0%, transparent 100%),
       radial-gradient(ellipse 26% 19% at 45% 70%, #f0d4a0 0%, #c4a47a 70%, transparent 80%),
-      radial-gradient(ellipse 9% 6% at 43% 66%, rgba(255, 245, 220, 0.65) 0%, transparent 100%),
       radial-gradient(circle at 50% 50%, #8b7050 0%, #6b5435 80%, #4a3a20 100%)
     `,
   },
   {
-    name: "Almonds",
-    count: "9 varieties",
-    href: "/shop/almonds",
-    accentColor: "#8b4513",
-    bgGradient: "linear-gradient(135deg, #fff3e8 0%, #f5d8b8 100%)",
-    bowl: `
-      radial-gradient(ellipse 16% 24% at 30% 30%, #d4854a 0%, #8b4513 70%, transparent 80%),
-      radial-gradient(ellipse 5% 9% at 28% 26%, rgba(255, 220, 180, 0.55) 0%, transparent 100%),
-      radial-gradient(ellipse 15% 23% at 60% 35%, #c4733a 0%, #7a3d10 70%, transparent 80%),
-      radial-gradient(ellipse 5% 8% at 58% 31%, rgba(255, 220, 180, 0.55) 0%, transparent 100%),
-      radial-gradient(ellipse 17% 25% at 45% 70%, #d4854a 0%, #8b4513 70%, transparent 80%),
-      radial-gradient(ellipse 5% 9% at 43% 66%, rgba(255, 220, 180, 0.55) 0%, transparent 100%),
-      radial-gradient(circle at 50% 50%, #6b3818 0%, #4a240a 80%, #2a1404 100%)
-    `,
-  },
-  {
     name: "Pistachios",
-    count: "7 varieties",
-    href: "/shop/pistachios",
+    count: "3 grades",
+    href: "/shop?cat=pistachios",
     accentColor: "#6b7d30",
     bgGradient: "linear-gradient(135deg, #f4f8e8 0%, #dde8c5 100%)",
     bowl: `
       radial-gradient(ellipse 18% 18% at 30% 30%, #b0c068 0%, #6b7d30 70%, transparent 80%),
-      radial-gradient(ellipse 6% 6% at 28% 26%, rgba(220, 240, 180, 0.55) 0%, transparent 100%),
       radial-gradient(ellipse 17% 17% at 60% 35%, #a0b05a 0%, #5c6b30 70%, transparent 80%),
-      radial-gradient(ellipse 5% 5% at 58% 31%, rgba(220, 240, 180, 0.55) 0%, transparent 100%),
       radial-gradient(ellipse 19% 19% at 45% 70%, #b0c068 0%, #6b7d30 70%, transparent 80%),
-      radial-gradient(ellipse 6% 6% at 43% 66%, rgba(220, 240, 180, 0.55) 0%, transparent 100%),
       radial-gradient(circle at 50% 50%, #4a5520 0%, #3d4520 80%, #2a3015 100%)
     `,
   },
   {
+    name: "Walnuts",
+    count: "3 varieties",
+    href: "/shop?cat=walnuts",
+    accentColor: "#6b4828",
+    bgGradient: "linear-gradient(135deg, #fbf3e8 0%, #e8d4ba 100%)",
+    bowl: `
+      radial-gradient(ellipse 22% 20% at 30% 30%, #c89770 0%, #8b6240 70%, transparent 80%),
+      radial-gradient(ellipse 20% 18% at 65% 35%, #b48058 0%, #7a4d28 70%, transparent 80%),
+      radial-gradient(ellipse 24% 22% at 40% 65%, #c89770 0%, #8b6240 70%, transparent 80%),
+      radial-gradient(circle at 50% 50%, #6b4828 0%, #4a3220 80%, #2a1c0a 100%)
+    `,
+  },
+  {
+    name: "Figs (Anjeer)",
+    count: "2 grades",
+    href: "/shop?cat=figs",
+    accentColor: "#7a4d2a",
+    bgGradient: "linear-gradient(135deg, #fdf2e8 0%, #f0d4b8 100%)",
+    bowl: `
+      radial-gradient(ellipse 22% 20% at 30% 30%, #c4956b 0%, #7a4d2a 70%, transparent 80%),
+      radial-gradient(ellipse 20% 18% at 65% 35%, #b88556 0%, #6b3a18 70%, transparent 80%),
+      radial-gradient(ellipse 24% 22% at 40% 65%, #c4956b 0%, #7a4d2a 70%, transparent 80%),
+      radial-gradient(circle at 50% 50%, #5c3818 0%, #4a2810 80%, #2a1808 100%)
+    `,
+  },
+  {
     name: "Raisins",
-    count: "11 varieties",
-    href: "/shop/raisins",
+    count: "2 grades",
+    href: "/shop?cat=raisins",
     accentColor: "#8b6914",
     bgGradient: "linear-gradient(135deg, #fdf6e0 0%, #f0dcaa 100%)",
     bowl: `
       radial-gradient(ellipse 12% 13% at 30% 28%, #e8b840 0%, #8b6914 70%, transparent 80%),
-      radial-gradient(ellipse 4% 5% at 28% 25%, rgba(255, 240, 180, 0.55) 0%, transparent 100%),
       radial-gradient(ellipse 11% 12% at 55% 32%, #d4a017 0%, #7a5510 70%, transparent 80%),
-      radial-gradient(ellipse 4% 4% at 53% 29%, rgba(255, 240, 180, 0.55) 0%, transparent 100%),
       radial-gradient(ellipse 13% 14% at 42% 55%, #e8b840 0%, #8b6914 70%, transparent 80%),
-      radial-gradient(ellipse 4% 5% at 40% 52%, rgba(255, 240, 180, 0.55) 0%, transparent 100%),
-      radial-gradient(ellipse 11% 12% at 65% 70%, #d4a017 0%, #7a5510 70%, transparent 80%),
       radial-gradient(circle at 50% 50%, #6b4d10 0%, #4a3510 80%, #2a200a 100%)
     `,
   },
   {
     name: "Gift Hampers",
-    count: "24 options",
+    count: "3 tiers",
     href: "/gift",
     accentColor: "#8b3a2e",
     bgGradient: "linear-gradient(135deg, #fff0ec 0%, #f5cfc5 100%)",
@@ -116,7 +117,7 @@ export default function Categories() {
           </div>
         </Reveal>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-5">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-4 md:gap-5">
           {categories.map((cat, i) => (
             <Reveal key={cat.name} delay={i * 60}>
               <a
@@ -124,8 +125,8 @@ export default function Categories() {
                 className="group relative block aspect-square rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-500 hover:-translate-y-2"
                 style={{ background: cat.bgGradient }}
               >
-                {/* Top label */}
-                <div className="absolute top-4 left-4 z-10">
+                {/* Top labels */}
+                <div className="absolute top-4 left-4 z-10 flex flex-col gap-1">
                   <div
                     className="text-[10px] font-semibold tracking-[0.15em] uppercase"
                     style={{ color: cat.accentColor }}
@@ -134,11 +135,17 @@ export default function Categories() {
                   </div>
                 </div>
 
+                {/* Premium badge for Mamra */}
+                {cat.badge && (
+                  <div className="absolute top-4 right-4 z-10 bg-mandaar text-saffron text-[9px] font-bold px-2 py-0.5 rounded tracking-wider">
+                    {cat.badge}
+                  </div>
+                )}
+
                 {/* Center bowl visual */}
                 <div className="absolute inset-0 flex items-center justify-center p-6 md:p-8">
                   {cat.name === "Gift Hampers" ? (
                     <div className="relative w-3/4 h-3/4 flex items-center justify-center">
-                      {/* Elegant gift box illustration */}
                       <div
                         className="relative w-full h-full rounded-lg shadow-[0_15px_30px_rgba(139,58,46,0.3)]"
                         style={{
@@ -146,10 +153,8 @@ export default function Categories() {
                             "linear-gradient(135deg, #e8b94a 0%, #d4a017 50%, #8b6914 100%)",
                         }}
                       >
-                        {/* Ribbon cross */}
                         <div className="absolute left-1/2 top-0 bottom-0 w-3 -translate-x-1/2 bg-rust shadow-[inset_0_0_3px_rgba(0,0,0,0.4)]" />
                         <div className="absolute top-1/2 left-0 right-0 h-3 -translate-y-1/2 bg-rust shadow-[inset_0_0_3px_rgba(0,0,0,0.4)]" />
-                        {/* Bow */}
                         <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-7 h-5">
                           <div className="absolute inset-0 bg-rust rounded-t-full" />
                           <div className="absolute top-1 -left-1 w-3 h-3 bg-rust rounded-full -rotate-[30deg]" />
@@ -166,17 +171,17 @@ export default function Categories() {
                 </div>
 
                 {/* Bottom label */}
-                <div className="absolute inset-x-0 bottom-0 px-4 md:px-5 py-4 bg-gradient-to-t from-white/95 via-white/80 to-transparent">
-                  <div className="font-display text-base md:text-lg font-medium text-mandaar leading-tight flex items-center justify-between">
-                    {cat.name}
+                <div className="absolute inset-x-0 bottom-0 px-3 md:px-4 py-3 bg-gradient-to-t from-white/95 via-white/85 to-transparent">
+                  <div className="font-display text-sm md:text-base font-medium text-mandaar leading-tight flex items-center justify-between">
+                    <span className="truncate pr-1">{cat.name}</span>
                     <svg
-                      width="16"
-                      height="16"
+                      width="14"
+                      height="14"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="2"
-                      className="text-mandaar opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"
+                      className="text-mandaar opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 flex-shrink-0"
                     >
                       <path d="M5 12h14M12 5l7 7-7 7" />
                     </svg>

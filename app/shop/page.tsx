@@ -1,24 +1,13 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import PageHeader from "@/components/PageHeader";
 import ProductCard from "@/components/ProductCard";
 import Reveal from "@/components/Reveal";
-import { products } from "@/lib/products";
+import { products, getAllCategories } from "@/lib/products";
 import { cn } from "@/lib/utils";
 import { SlidersHorizontalIcon } from "lucide-react";
-
-const categories = [
-  { id: "all", label: "All Products" },
-  { id: "dates", label: "Dates" },
-  { id: "cashews", label: "Cashews" },
-  { id: "almonds", label: "Almonds" },
-  { id: "pistachios", label: "Pistachios" },
-  { id: "raisins", label: "Raisins" },
-  { id: "walnuts", label: "Walnuts" },
-  { id: "apricots", label: "Apricots" },
-  { id: "figs", label: "Figs" },
-];
 
 const sortOptions = [
   { id: "featured", label: "Featured" },
@@ -27,18 +16,42 @@ const sortOptions = [
   { id: "name", label: "Name: A to Z" },
 ];
 
-export default function ShopPage() {
-  const [category, setCategory] = useState("all");
+function ShopContent() {
+  const searchParams = useSearchParams();
+  const initialCat = searchParams.get("cat") || "all";
+
+  const [category, setCategory] = useState(initialCat);
   const [sort, setSort] = useState("featured");
+
+  // Update if URL changes
+  useEffect(() => {
+    setCategory(searchParams.get("cat") || "all");
+  }, [searchParams]);
+
+  // Build category list dynamically from product data
+  const categories = useMemo(() => {
+    const cats = getAllCategories();
+    return [
+      { slug: "all", label: "All Products", count: products.length },
+      ...cats,
+    ];
+  }, []);
 
   const filtered = useMemo(() => {
     let list = [...products];
     if (category !== "all") {
       list = list.filter((p) => p.category === category);
     }
-    if (sort === "price-low") list.sort((a, b) => a.price - b.price);
-    if (sort === "price-high") list.sort((a, b) => b.price - a.price);
-    if (sort === "name") list.sort((a, b) => a.name.localeCompare(b.name));
+    // Sort by smallest weight price (default 250g or first option)
+    if (sort === "price-low") {
+      list.sort((a, b) => a.weights[0].price - b.weights[0].price);
+    }
+    if (sort === "price-high") {
+      list.sort((a, b) => b.weights[0].price - a.weights[0].price);
+    }
+    if (sort === "name") {
+      list.sort((a, b) => a.name.localeCompare(b.name));
+    }
     return list;
   }, [category, sort]);
 
@@ -52,7 +65,7 @@ export default function ShopPage() {
             All our <span className="italic text-saffron">treasures</span>
           </>
         }
-        description="From the orchards of Kashmir to the date palms of Jordan — every product hand-picked and quality-checked in our Udaipur warehouse."
+        description="Premium dry fruits, hand-picked from origin farms in Kashmir, Jordan, Iran, Goa, and beyond. Hand-graded at our Udaipur warehouse."
       />
 
       <section className="bg-ivory px-6 md:px-14 pb-24">
@@ -63,16 +76,19 @@ export default function ShopPage() {
             <div className="flex items-center gap-2 overflow-x-auto pb-2 -mb-2 md:flex-wrap">
               {categories.map((cat) => (
                 <button
-                  key={cat.id}
-                  onClick={() => setCategory(cat.id)}
+                  key={cat.slug}
+                  onClick={() => setCategory(cat.slug)}
                   className={cn(
-                    "shrink-0 px-4 py-2 rounded-full text-xs font-medium tracking-wide transition-all border",
-                    category === cat.id
+                    "shrink-0 px-4 py-2 rounded-full text-xs font-medium tracking-wide transition-all border whitespace-nowrap",
+                    category === cat.slug
                       ? "bg-mandaar text-cream border-mandaar"
                       : "bg-snow text-mandaar border-mandaar/15 hover:border-mandaar"
                   )}
                 >
                   {cat.label}
+                  <span className="ml-1.5 opacity-60 text-[10px]">
+                    {cat.count}
+                  </span>
                 </button>
               ))}
             </div>
@@ -96,8 +112,17 @@ export default function ShopPage() {
 
           {/* Results count */}
           <div className="text-warm-gray text-sm mb-8">
-            Showing <span className="text-mandaar font-semibold">{filtered.length}</span>{" "}
+            Showing{" "}
+            <span className="text-mandaar font-semibold">{filtered.length}</span>{" "}
             {filtered.length === 1 ? "product" : "products"}
+            {category !== "all" && (
+              <>
+                {" in "}
+                <span className="text-mandaar font-semibold italic">
+                  {categories.find((c) => c.slug === category)?.label}
+                </span>
+              </>
+            )}
           </div>
 
           {/* Products grid */}
@@ -119,5 +144,13 @@ export default function ShopPage() {
         </div>
       </section>
     </>
+  );
+}
+
+export default function ShopPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-ivory" />}>
+      <ShopContent />
+    </Suspense>
   );
 }
