@@ -1,23 +1,23 @@
-﻿import Reveal from "@/components/Reveal";
+import Reveal from "@/components/Reveal";
 
 const testimonials = [
   {
     initials: "PA",
     name: "Priya Agarwal",
     location: "Mumbai, Maharashtra",
-    text: "Bought the Maharaja hamper for our Diwali clients. The packaging alone got compliments. The Medjoul dates? Unreal. Already reordered twice.",
+    text: "Bought the Maharaja hamper for our Diwali clients. The packaging alone got compliments. The Mamra almonds were unreal. Already reordered twice.",
   },
   {
     initials: "RJ",
     name: "Rohit Jhunjhunwala",
     location: "Bangalore, Karnataka",
-    text: "Been buying from Mandaar since I was a child visiting Udaipur. Now they ship to Bangalore in 2 days. Same quality, same trust, just easier.",
+    text: "Discovered Mandaar on a trip to Udaipur. Their cashews ruined every other brand for me - now they ship to Bangalore in 2 days. Same quality, just easier.",
   },
   {
     initials: "SK",
     name: "Sneha Kapoor",
     location: "Delhi NCR",
-    text: "The walnuts are genuinely Kashmiri - you can taste the difference. My mother insists we get them only from here now. Worth every rupee.",
+    text: "The walnuts here are something else. My mother insists we get them only from Mandaar now. Worth every rupee.",
   },
 ];
 

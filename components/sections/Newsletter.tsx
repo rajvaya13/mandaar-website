@@ -43,11 +43,11 @@ export default function Newsletter() {
               </div>
               <h2 className="font-display text-3xl md:text-5xl font-light tracking-tight mb-5">
                 First taste of{" "}
-                <span className="italic text-saffron-light">new harvests</span>
+                <span className="italic text-saffron-light">new arrivals</span>
               </h2>
               <p className="text-cream/70 text-base max-w-lg mx-auto mb-9 leading-relaxed">
-                Recipes from our kitchen, exclusive subscriber pricing, and early
-                access when Kashmiri walnuts arrive each October.
+                Recipes from our kitchen, exclusive subscriber pricing, and
+                early access to fresh arrivals each season.
               </p>
 
               <form

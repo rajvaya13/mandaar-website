@@ -9,7 +9,7 @@ const slides = [
   {
     eyebrow: "From The Aravalli Hills",
     title: ["A Taste of", "Rajasthani Royalty,", "delivered fresh."],
-    desc: "Mandaar hand-picks the finest nuts and dried fruits, sourced directly from origin farms in Kashmir, Iran, California, and beyond, curated in the heart of Udaipur.",
+    desc: "Mandaar hand-picks the finest nuts and dried fruits, sourced directly from premium growers across India and abroad, hand-graded in the heart of Udaipur.",
   },
   {
     eyebrow: "Iran's Finest Grade",
@@ -17,9 +17,9 @@ const slides = [
     desc: "Authentic Iranian Mamra in 4 grades, from ES to the rare A5. Denser, oilier, and sweeter than American almonds; hand-graded at our Udaipur warehouse.",
   },
   {
-    eyebrow: "From Kashmir's Orchards",
-    title: ["The lightest", "Kashmiri walnut", "halves you'll find."],
-    desc: "Direct from Pampore's hill orchards. Cracked, sorted, and vacuum-sealed within 48 hours, the way real walnuts are meant to taste.",
+    eyebrow: "Hand-graded Twice",
+    title: ["Mandaar Kaju,", "personally sorted,", "before it ships."],
+    desc: "From everyday W320 to our top-grade MSK premium cashews. Each batch hand-sorted to keep only the largest, whitest, intact halves. The signature Mandaar promise.",
   },
 ];
 

@@ -1,24 +1,7 @@
 import PageHeader from "@/components/PageHeader";
 import Reveal from "@/components/Reveal";
 import { CheckIcon } from "lucide-react";
-
-const milestones = [
-  {
-    year: "2018",
-    title: "The shop opens",
-    desc: "Mandaar opens on Bhupalpura Main Road in Udaipur, near Gattani Hospital. One founding rule from day one: every product is hand-graded and personally tasted before going on the shelves.",
-  },
-  {
-    year: "The Years Since",
-    title: "Building direct partnerships",
-    desc: "Trip by trip, supplier by supplier, we replace middlemen with farmer-direct relationships. Kashmiri walnut growers in Pampore. Iranian Mamra almond producers in Sahand. Californian almond growers. Turkish anjeer growers in Aydin.",
-  },
-  {
-    year: "2026",
-    title: "Mandaar goes online",
-    desc: "Eight years after opening, Mandaar launches online. The same hand-picked, hand-graded products, now shipping across India in 2 to 4 days.",
-  },
-];
+import { getYearsSinceFounding, SITE } from "@/lib/site-config";
 
 const values = [
   "Hand-picked directly from origin farms, no middlemen",
@@ -30,6 +13,28 @@ const values = [
 ];
 
 export default function AboutPage() {
+  // ===== DYNAMIC YEAR HANDLING =====
+  // These recalculate automatically each calendar year - no manual editing required.
+  const yearsSinceFounding = getYearsSinceFounding();
+
+  const milestones = [
+    {
+      year: `${SITE.foundingYear}`,
+      title: "The shop opens",
+      desc: `Mandaar opens on Bhupalpura Main Road in Udaipur, near Gattani Hospital. One founding rule from day one: every product is hand-graded and personally tasted before going on the shelves.`,
+    },
+    {
+      year: "The Years Since",
+      title: "Building direct partnerships",
+      desc: "Trip by trip, supplier by supplier, we replace middlemen with direct relationships. Iranian Mamra almond producers, walnut and cashew suppliers, fig and raisin growers - all hand-graded at our Udaipur warehouse.",
+    },
+    {
+      year: `${yearsSinceFounding} Years On`,
+      title: "Mandaar online",
+      desc: `${yearsSinceFounding} years after opening, Mandaar now ships hand-picked, hand-graded products across India in 2 to 4 days. The same shop, the same standard.`,
+    },
+  ];
+
   return (
     <>
       <PageHeader
@@ -40,7 +45,7 @@ export default function AboutPage() {
             Sourced direct, <span className="italic text-saffron">sold honestly</span>
           </>
         }
-        description="Mandaar opened in 2018 with one promise: source the finest dry fruits directly from origin farms, and sell only what we'd serve at our own table."
+        description={`Mandaar opened in ${SITE.foundingYear} with one promise: source the finest dry fruits directly from origin farms, and sell only what we'd serve at our own table.`}
       />
 
       {/* === FOUNDER STORY === */}
@@ -49,9 +54,10 @@ export default function AboutPage() {
           <Reveal>
             <div className="space-y-6 text-warm-gray leading-[1.85] text-base md:text-lg">
               <p>
-                It started in 2018, on a quiet stretch of Bhupalpura Main Road
-                in Udaipur, a few hundred metres from Gattani Hospital, in a
-                shop no bigger than a small living room.
+                It started in {SITE.foundingYear}, on a quiet stretch of
+                Bhupalpura Main Road in Udaipur, a few hundred metres from
+                Gattani Hospital, in a shop no bigger than a small living
+                room.
               </p>
               <p>
                 The founding rule was simple: every nut, every batch had to be
@@ -65,19 +71,19 @@ export default function AboutPage() {
                 Jaipur. The shop is still on the same road.
               </p>
               <p>
-                What&apos;s grown since: we now travel ourselves to Kashmir
-                each October for the walnut harvest, to Pampore where
-                light-coloured halves come straight from the cold-press shed.
-                Our Mamra almonds come from Iranian growers in Sahand. Cashews
-                from Goan estates. Anjeer from Malatya in eastern Turkey.
+                What&apos;s grown since: our supplier network has expanded
+                across India and abroad. Iranian Mamra almonds. Premium
+                walnuts in shell and kernels. Cashews graded at origin.
+                Anjeer, kishmish, munakka, and more - each variety hand-picked
+                and vacuum-sealed at our Udaipur warehouse before shipping.
               </p>
               <p>
                 No middlemen. No imported-then-resold. Every product on our
-                shelves can be traced back to the farm where it grew, and most
-                of the time, to the person who picked it.
+                shelves can be traced back to its source.
               </p>
               <p>
-                Eight years on. One shop. One standard. The same founding rule.
+                {yearsSinceFounding} years on. One shop. One standard. The
+                same founding rule.
               </p>
             </div>
           </Reveal>

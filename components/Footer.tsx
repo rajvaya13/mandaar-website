@@ -1,25 +1,26 @@
-﻿import Link from "next/link";
+import Link from "next/link";
+import { SITE, getCurrentYear } from "@/lib/site-config";
 
 const shopLinks = [
   { label: "All Products", href: "/shop" },
-  { label: "Dates", href: "/shop/dates" },
-  { label: "Nuts", href: "/shop/nuts" },
+  { label: "Mamra Almonds", href: "/shop?cat=mamra" },
+  { label: "Cashews", href: "/shop?cat=cashews" },
   { label: "Gift Hampers", href: "/gift" },
   { label: "Bulk Orders", href: "/contact" },
 ];
 
 const companyLinks = [
   { label: "Our Story", href: "/about" },
-  { label: "Sourcing", href: "/sourcing" },
+  { label: "Sourcing", href: "/about" },
   { label: "Visit Our Store", href: "/contact" },
-  { label: "Careers", href: "/careers" },
+  { label: "Careers", href: "/contact" },
 ];
 
 const helpLinks = [
-  { label: "Track Order", href: "/track" },
-  { label: "Shipping", href: "/shipping" },
-  { label: "Returns", href: "/returns" },
-  { label: "FAQs", href: "/faq" },
+  { label: "Track Order", href: "/contact" },
+  { label: "Shipping", href: "/contact" },
+  { label: "Returns", href: "/contact" },
+  { label: "FAQs", href: "/contact" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -45,6 +46,8 @@ const WhatsAppIcon = () => (
 );
 
 export default function Footer() {
+  const currentYear = getCurrentYear(); // DYNAMIC - updates automatically
+
   return (
     <footer id="contact" className="bg-mandaar-deep text-cream px-6 md:px-14 pt-20 pb-8">
       <div className="max-w-7xl mx-auto">
@@ -52,17 +55,17 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <h3 className="font-display text-3xl font-medium mb-4 tracking-tight">
-              <span className="text-saffron">●</span> Mandaar
+              <span className="text-saffron">●</span> {SITE.name}
             </h3>
             <p className="text-cream/70 text-sm leading-relaxed max-w-sm mb-5">
-              Udaipur&apos;s most-trusted name in premium dry fruits since 1987.
-              Three generations of craft, curation, and care - now delivered to
-              your doorstep.
+              Premium nuts and dried fruits, hand-picked from origin growers
+              and curated in Udaipur. Direct sourcing, hand-grading, and
+              pan-India delivery.
             </p>
             <address className="not-italic text-cream/60 text-xs leading-relaxed max-w-sm mb-6">
-              Shop No. 406, Bhupalpura Main Road, Udaipole<br />
-              Near Gattani Hospital, Udaipur - 313001<br />
-              Rajasthan, India
+              {SITE.address.line1}<br />
+              {SITE.address.line2}<br />
+              {SITE.address.line3}
             </address>
             <div className="flex gap-3">
               <SocialButton icon={<InstagramIcon />} label="Instagram" />
@@ -77,7 +80,7 @@ export default function Footer() {
         </div>
 
         <div className="pt-8 flex flex-col md:flex-row md:justify-between gap-3 text-xs text-cream/50">
-          <div>© 2026 Mandaar Dry Fruits · Bhupalpura, Udaipur 313001</div>
+          <div>© {currentYear} {SITE.name} Dry Fruits · Bhupalpura, {SITE.city} {SITE.pincode}</div>
           <div className="font-display italic">
             Made with <span className="text-rust-light">♥</span> in the City of Lakes
           </div>
@@ -101,7 +104,7 @@ function FooterColumn({
       </h4>
       <ul className="space-y-3">
         {links.map((link) => (
-          <li key={link.href}>
+          <li key={link.label}>
             <Link
               href={link.href}
               className="text-cream/75 text-sm hover:text-saffron transition-colors"

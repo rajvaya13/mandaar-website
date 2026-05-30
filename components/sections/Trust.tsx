@@ -4,7 +4,7 @@ const badges = [
   { label: "FSSAI Certified", sub: "Lic. 12345678901234" },
   { label: "GST Registered", sub: "08AABCM1234X1Z5" },
   { label: "Google Verified", sub: "4.8 ★ on Maps" },
-  { label: "Just Dial Top-Rated", sub: "Udaipur · 2024" },
+  { label: "Just Dial Top-Rated", sub: "Udaipur" },
 ];
 
 export default function Trust() {

@@ -1,6 +1,6 @@
 ﻿// =====================================================
 // MANDAAR REAL PRODUCT CATALOG
-// Data sourced directly from the shop's product listing (May 2026)
+// Data sourced directly from the shop's product listing
 // 25 products across 10 categories
 // =====================================================
 
@@ -108,7 +108,7 @@ const munakkaBowl = `
   radial-gradient(circle at 50% 50%, #3d1f06 0%, #2a1404 80%, #1a0a02 100%)
 `;
 
-// Light Kashmiri walnut halves
+// Light walnut halves
 const walnutBowl = `
   radial-gradient(ellipse 22% 20% at 30% 30%, #c89770 0%, #8b6240 70%, transparent 80%),
   radial-gradient(ellipse 6% 6% at 28% 26%, rgba(255, 230, 200, 0.45) 0%, transparent 100%),
@@ -181,7 +181,7 @@ export const products: Product[] = [
       { weight: "750g", price: 960 },
       { weight: "1kg", price: 1249 },
     ],
-    description: "320 cashews per pound - large, milky-cream, full kernels. Goa-grade, hand-sorted.",
+    description: "320 cashews per pound - large, milky-cream, full kernels. Hand-sorted premium grade.",
     bowlBg: cashewBowl,
   },
   {
@@ -537,7 +537,7 @@ export const products: Product[] = [
     weights: [
       { weight: "1kg", price: 1050 },
     ],
-    description: "Whole Kashmiri walnuts in the shell. 36+ size grade - large, plump, perfect for cracking fresh.",
+    description: "Whole walnuts in the shell. 36+ size grade - large, plump, perfect for cracking fresh.",
     bowlBg: akhrotShellBowl,
   },
   {

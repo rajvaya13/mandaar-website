@@ -1,7 +1,11 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import Reveal from "@/components/Reveal";
 import { ArrowRightIcon, GiftIcon, CheckIcon } from "lucide-react";
+
+// ===== HAMPERS REBUILT WITH ACTUAL PRODUCTS FROM THE CATALOG =====
+// Every item below maps to a real product in lib/products.ts.
+// Math: 250g pack prices add up to roughly the hamper price + packaging margin.
 
 const hampers = [
   {
@@ -9,12 +13,12 @@ const hampers = [
     name: "Classic",
     price: 1499,
     mrp: 1699,
-    desc: "A thoughtful starter hamper with our most-loved varieties - perfect for friends, neighbours, and small acknowledgements.",
+    desc: "A thoughtful starter hamper with our most-loved varieties, perfect for friends, neighbours, and small acknowledgements.",
     items: [
-      "Medjoul Dates · 250g",
-      "California Almonds · 250g",
-      "Jumbo Cashews · 250g",
-      "Golden Raisins · 150g",
+      "Hand-picked Kaju W320 · 250g",
+      "Badam A Gold · 250g",
+      "Kishmish A Gold · 250g",
+      "Anjeer AB Gold · 250g",
       "Handwoven jute tray",
       "Personalised card",
     ],
@@ -25,15 +29,13 @@ const hampers = [
     name: "Regal",
     price: 2999,
     mrp: 3400,
-    desc: "Our signature gift - a generous spread of premium varieties in a brass-finish tin, designed to impress.",
+    desc: "Our signature gift, a generous spread of premium varieties in a brass-finish tin, designed to impress.",
     items: [
-      "Medjoul Dates · 400g",
-      "Ajwa Dates · 250g",
-      "Cashews W210 · 400g",
-      "Iranian Pistachios · 250g",
-      "Kashmiri Walnuts · 250g",
-      "Turkish Apricots · 200g",
-      "Anjeer · 150g",
+      "Mandaar Sp. Kaju · 250g",
+      "Badam A Gold · 500g",
+      "Mandaar Sp. Pista · 250g",
+      "Anjeer Bold · 250g",
+      "Akhrot Kernels · 250g",
       "Brass-finish tin",
       "Personalised card & ribbon",
     ],
@@ -44,15 +46,16 @@ const hampers = [
     name: "Maharaja",
     price: 4999,
     mrp: 5800,
-    desc: "The most generous hamper we make. Presented in a traditional carved wooden box - fit for the occasions that matter most.",
+    desc: "The most generous hamper we make. Presented in a traditional carved wooden box, fit for the occasions that matter most.",
     items: [
-      "All Regal items, larger sizes",
-      "Premium Saffron · 1g",
-      "Exotic Mixed Trail Mix · 300g",
-      "Custom dry-fruit barfi · 250g",
+      "Mamra Badam A4 · 250g",
+      "Mandaar Sp. Kaju · 500g",
+      "Mandaar Sp. Pista Handpicked · 250g",
+      "Mandaar Sp. Akhrot Kernels · 250g",
+      "Anjeer Bold · 250g",
+      "Mandaar Sp. Fox Nuts · 250g",
       "Carved wooden gift box",
-      "Hand-written note from our family",
-      "Free delivery anywhere in India",
+      "Hand-written note",
     ],
     badge: "Premium",
   },
@@ -188,7 +191,7 @@ export default function GiftPage() {
               Ordering 50+ <span className="italic text-saffron-light">hampers</span>?
             </h2>
             <p className="text-cream/70 text-base md:text-lg mb-9 leading-relaxed">
-              Corporate gifting, wedding sangeets, festival packs for entire offices - talk to us. Custom packaging, branded cards, and significant volume pricing available.
+              Corporate gifting, wedding sangeets, festival packs for entire offices, talk to us. Custom packaging, branded cards, and significant volume pricing available.
             </p>
             <Link
               href="/contact"

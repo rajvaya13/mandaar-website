@@ -5,11 +5,11 @@ const items = [
   "✦",
   "Hand-picked Premium Grade",
   "✦",
-  "Pan-India Delivery in 2–4 days",
+  "Pan-India Delivery in 2-4 days",
   "✦",
-  "Three Generations of Trust",
+  "Direct from Origin Farms",
   "✦",
-  "Since 1987",
+  "Vacuum-sealed Fresh",
   "✦",
 ];
 
