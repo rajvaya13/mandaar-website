@@ -2,13 +2,17 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { HeartIcon, EyeIcon, PlusIcon } from "lucide-react";
+import { HeartIcon, PlusIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { Product } from "@/lib/products";
 
 export default function ProductCard({ product }: { product: Product }) {
   const [fav, setFav] = useState(false);
   const [added, setAdded] = useState(false);
+  // Default to first weight option (usually 250g, which is the most common impulse-buy size)
+  const [selectedWeightIdx, setSelectedWeightIdx] = useState(0);
+
+  const selectedWeight = product.weights[selectedWeightIdx];
 
   const handleAdd = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -24,7 +28,7 @@ export default function ProductCard({ product }: { product: Product }) {
   };
 
   return (
-    <div className="group relative bg-snow rounded-3xl p-4 md:p-5 shadow-card hover:shadow-card-hover hover:-translate-y-2 transition-all duration-500">
+    <div className="group relative bg-snow rounded-3xl p-4 md:p-5 shadow-card hover:shadow-card-hover hover:-translate-y-2 transition-all duration-500 flex flex-col">
       {/* Badge */}
       {product.badge && (
         <div className="absolute top-5 left-5 z-10 bg-rust text-cream text-[10px] font-semibold px-2.5 py-1.5 rounded tracking-wider">
@@ -50,7 +54,7 @@ export default function ProductCard({ product }: { product: Product }) {
         />
       </button>
 
-      {/* Product visual — wood plate with bowl on top */}
+      {/* Product visual */}
       <Link
         href={`/products/${product.id}`}
         className="block relative aspect-square rounded-2xl mb-5 plate-wood flex items-center justify-center overflow-hidden"
@@ -63,56 +67,88 @@ export default function ProductCard({ product }: { product: Product }) {
         />
 
         <div className="absolute inset-0 grain pointer-events-none" />
-
-        <div
-          aria-label="Quick view"
-          className="absolute bottom-3 right-3 w-10 h-10 rounded-full bg-mandaar text-cream flex items-center justify-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 hover:bg-mandaar-deep z-10"
-        >
-          <EyeIcon size={16} strokeWidth={1.8} />
-        </div>
       </Link>
 
       {/* Info */}
-      <div className="px-1">
+      <div className="px-1 flex flex-col flex-1">
         <Link href={`/products/${product.id}`} className="block">
-          <h3 className="font-display text-base md:text-lg font-medium text-zinc-900 leading-tight mb-1.5 hover:text-mandaar transition-colors">
+          <h3 className="font-display text-base md:text-lg font-medium text-zinc-900 leading-tight mb-1 hover:text-mandaar transition-colors line-clamp-2">
             {product.name}
           </h3>
         </Link>
-        <div className="text-warm-gray text-[10px] uppercase tracking-[0.1em] mb-3.5">
-          {product.origin}
-        </div>
-        <div className="flex items-baseline justify-between mb-4">
-          <div className="flex items-baseline gap-2.5">
-            <span className="font-display text-xl text-mandaar font-medium">
-              ₹{product.price.toLocaleString("en-IN")}
-            </span>
-            <span className="text-warm-gray text-xs line-through">
-              ₹{product.mrp.toLocaleString("en-IN")}
-            </span>
-          </div>
-          <div className="text-rust text-[10px] font-semibold">
-            {Math.round((1 - product.price / product.mrp) * 100)}% off
-          </div>
-        </div>
-        <button
-          onClick={handleAdd}
-          className={cn(
-            "w-full py-3 rounded-full text-[11px] uppercase tracking-[0.05em] font-semibold transition-all flex items-center justify-center gap-2",
-            added
-              ? "bg-saffron text-mandaar-deep"
-              : "bg-mandaar text-cream hover:bg-mandaar-deep"
-          )}
-        >
-          {added ? (
-            <>Added ✓</>
-          ) : (
+
+        {/* Category · Grade */}
+        <div className="text-warm-gray text-[10px] uppercase tracking-[0.1em] mb-4">
+          {product.categoryLabel}
+          {product.grade && (
             <>
-              <PlusIcon size={14} strokeWidth={2.5} />
-              Add to Cart
+              {" · "}
+              <span className="text-mandaar/70">{product.grade}</span>
             </>
           )}
-        </button>
+        </div>
+
+        {/* Weight selector — only show if multiple weights */}
+        {product.weights.length > 1 && (
+          <div className="flex flex-wrap gap-1.5 mb-3">
+            {product.weights.map((w, idx) => (
+              <button
+                key={w.weight}
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setSelectedWeightIdx(idx);
+                }}
+                className={cn(
+                  "px-2.5 py-1 rounded-full text-[11px] font-semibold tracking-wide transition-all border",
+                  idx === selectedWeightIdx
+                    ? "bg-mandaar text-cream border-mandaar"
+                    : "bg-snow text-mandaar border-mandaar/15 hover:border-mandaar"
+                )}
+              >
+                {w.weight}
+              </button>
+            ))}
+          </div>
+        )}
+
+        {/* Price block — pushed to bottom via mt-auto */}
+        <div className="mt-auto pt-1">
+          <div className="flex items-baseline justify-between mb-4">
+            <div className="flex items-baseline gap-2.5 flex-wrap">
+              <span className="font-display text-xl md:text-2xl text-mandaar font-medium">
+                ₹{selectedWeight.price.toLocaleString("en-IN")}
+              </span>
+              <span className="text-warm-gray text-xs">
+                / {selectedWeight.weight}
+              </span>
+            </div>
+            {product.pricePerKg && product.weights.length > 1 && (
+              <div className="text-warm-gray text-[10px] whitespace-nowrap">
+                ₹{product.pricePerKg.toLocaleString("en-IN")}/kg
+              </div>
+            )}
+          </div>
+
+          <button
+            onClick={handleAdd}
+            className={cn(
+              "w-full py-3 rounded-full text-[11px] uppercase tracking-[0.05em] font-semibold transition-all flex items-center justify-center gap-2",
+              added
+                ? "bg-saffron text-mandaar-deep"
+                : "bg-mandaar text-cream hover:bg-mandaar-deep"
+            )}
+          >
+            {added ? (
+              <>Added ✓</>
+            ) : (
+              <>
+                <PlusIcon size={14} strokeWidth={2.5} />
+                Add to Cart
+              </>
+            )}
+          </button>
+        </div>
       </div>
     </div>
   );

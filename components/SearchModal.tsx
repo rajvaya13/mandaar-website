@@ -14,7 +14,6 @@ export default function SearchModal({ open, onClose }: Props) {
   const [query, setQuery] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // Auto-focus input when opened, clear when closed
   useEffect(() => {
     if (open) {
       setTimeout(() => inputRef.current?.focus(), 100);
@@ -23,7 +22,6 @@ export default function SearchModal({ open, onClose }: Props) {
     }
   }, [open]);
 
-  // ESC to close
   useEffect(() => {
     if (!open) return;
     const handler = (e: KeyboardEvent) => {
@@ -33,7 +31,6 @@ export default function SearchModal({ open, onClose }: Props) {
     return () => window.removeEventListener("keydown", handler);
   }, [open, onClose]);
 
-  // Lock body scroll
   useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden";
@@ -47,14 +44,16 @@ export default function SearchModal({ open, onClose }: Props) {
 
   const results =
     query.trim().length === 0
-      ? products.slice(0, 4)
+      ? products.slice(0, 5)
       : products
           .filter((p) => {
             const q = query.toLowerCase();
             return (
               p.name.toLowerCase().includes(q) ||
-              p.origin.toLowerCase().includes(q) ||
-              p.category.toLowerCase().includes(q)
+              p.categoryLabel.toLowerCase().includes(q) ||
+              p.category.toLowerCase().includes(q) ||
+              (p.grade && p.grade.toLowerCase().includes(q)) ||
+              p.description.toLowerCase().includes(q)
             );
           })
           .slice(0, 8);
@@ -69,7 +68,6 @@ export default function SearchModal({ open, onClose }: Props) {
           className="bg-snow rounded-3xl w-full max-w-2xl shadow-[0_40px_100px_rgba(0,0,0,0.4)] overflow-hidden animate-slideUp"
           onClick={(e) => e.stopPropagation()}
         >
-          {/* Search input */}
           <div className="flex items-center gap-3 p-5 border-b border-mandaar/10">
             <SearchIcon
               size={20}
@@ -81,7 +79,7 @@ export default function SearchModal({ open, onClose }: Props) {
               type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search dates, almonds, cashews..."
+              placeholder="Search kaju, badam, mamra, akhrot..."
               className="flex-1 bg-transparent text-mandaar placeholder:text-warm-gray-light outline-none text-base"
             />
             <button
@@ -93,7 +91,6 @@ export default function SearchModal({ open, onClose }: Props) {
             </button>
           </div>
 
-          {/* Results */}
           <div className="max-h-[60vh] overflow-y-auto">
             {query.trim().length === 0 && results.length > 0 && (
               <div className="px-5 pt-4 pb-2 text-warm-gray text-[10px] uppercase tracking-[0.15em] font-semibold">
@@ -133,11 +130,15 @@ export default function SearchModal({ open, onClose }: Props) {
                         {p.name}
                       </div>
                       <div className="text-warm-gray text-xs truncate">
-                        {p.origin}
+                        {p.categoryLabel}
+                        {p.grade && ` · ${p.grade}`}
                       </div>
                     </div>
                     <div className="text-mandaar font-display text-sm font-medium flex-shrink-0">
-                      ₹{p.price.toLocaleString("en-IN")}
+                      ₹{p.weights[0].price.toLocaleString("en-IN")}
+                      <span className="text-warm-gray text-[10px] ml-1">
+                        /{p.weights[0].weight}
+                      </span>
                     </div>
                   </Link>
                 ))}
@@ -154,7 +155,6 @@ export default function SearchModal({ open, onClose }: Props) {
             )}
           </div>
 
-          {/* Footer hint */}
           <div className="hidden md:flex items-center justify-end gap-4 px-5 py-3 border-t border-mandaar/10 text-warm-gray text-xs bg-cream-warm">
             <span className="flex items-center gap-1.5">
               <kbd className="px-1.5 py-0.5 bg-snow border border-mandaar/15 rounded text-[10px] font-mono">

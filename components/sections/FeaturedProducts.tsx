@@ -1,10 +1,11 @@
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import ProductCard from "@/components/ProductCard";
-import { getFeaturedProducts } from "@/lib/products";
+import { getFeaturedProducts, products } from "@/lib/products";
 
 export default function FeaturedProducts() {
-  const products = getFeaturedProducts();
+  const featured = getFeaturedProducts();
+  const total = products.length;
 
   return (
     <section id="products" className="bg-ivory px-6 md:px-14 py-24 md:py-32">
@@ -19,14 +20,14 @@ export default function FeaturedProducts() {
               <span className="italic text-saffron">chosen by you</span>
             </h2>
             <p className="text-warm-gray text-base leading-relaxed">
-              Our most-loved picks — hand-graded, vacuum-sealed within hours of
-              arrival, and shipped across India.
+              Our most-loved picks — hand-graded in-house and vacuum-sealed
+              fresh. Shipped across India.
             </p>
           </div>
         </Reveal>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 md:gap-7">
-          {products.map((p, i) => (
+          {featured.map((p, i) => (
             <Reveal key={p.id} delay={i * 60}>
               <ProductCard product={p} />
             </Reveal>
@@ -39,7 +40,7 @@ export default function FeaturedProducts() {
               href="/shop"
               className="inline-flex items-center gap-3 text-mandaar font-display italic text-lg underline underline-offset-4 decoration-saffron hover:text-saffron transition-colors"
             >
-              View all 120+ products →
+              View all {total} products →
             </Link>
           </div>
         </Reveal>
