@@ -1,4 +1,4 @@
-import { CheckIcon } from "lucide-react";
+﻿import { CheckIcon } from "lucide-react";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 
@@ -9,7 +9,7 @@ const tips = [
   },
   {
     title: "Avoid Direct Heat",
-    desc: "Keep away from heat sources and sunlight — exposure causes rancidity in fatty nuts like walnuts and pistachios.",
+    desc: "Keep away from heat sources and sunlight - exposure causes rancidity in fatty nuts like walnuts and pistachios.",
   },
   {
     title: "Refrigerate for Longevity",
@@ -25,7 +25,7 @@ export default function Storage() {
   return (
     <section className="bg-snow px-6 md:px-14 py-24 md:py-32">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-[1fr_1.1fr] gap-12 lg:gap-20 items-center">
-        {/* Visual — a beautiful plate of mixed nuts */}
+        {/* Visual - a beautiful plate of mixed nuts */}
         <Reveal variant="fade">
           <div className="relative">
             {/* Decorative back card */}

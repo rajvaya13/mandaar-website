@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { ArrowRightIcon, GiftIcon, SparklesIcon } from "lucide-react";
 import Reveal from "@/components/Reveal";
 
@@ -179,7 +179,7 @@ export default function Gifting() {
           </Reveal>
           <Reveal delay={160}>
             <p className="text-warm-gray text-base leading-relaxed mb-8">
-              From wedding sangeets to Diwali corporate gifts — our hand-curated
+              From wedding sangeets to Diwali corporate gifts - our hand-curated
               hampers come in brass-finish tins, handwoven trays, and traditional
               thalis. Personalised cards included.
             </p>

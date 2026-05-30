@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Fraunces, Outfit } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -21,7 +21,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Mandaar — Udaipur's Finest Dry Fruits Since 2018",
+  title: "Mandaar - Udaipur's Finest Dry Fruits Since 2018",
   description:
     "Premium dates, nuts, and dried fruits from Udaipur, Rajasthan. Hand-picked, vacuum-sealed, delivered fresh across India.",
 };

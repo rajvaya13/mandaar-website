@@ -1,4 +1,4 @@
-import Reveal from "@/components/Reveal";
+﻿import Reveal from "@/components/Reveal";
 
 const testimonials = [
   {
@@ -17,7 +17,7 @@ const testimonials = [
     initials: "SK",
     name: "Sneha Kapoor",
     location: "Delhi NCR",
-    text: "The walnuts are genuinely Kashmiri — you can taste the difference. My mother insists we get them only from here now. Worth every rupee.",
+    text: "The walnuts are genuinely Kashmiri - you can taste the difference. My mother insists we get them only from here now. Worth every rupee.",
   },
 ];
 

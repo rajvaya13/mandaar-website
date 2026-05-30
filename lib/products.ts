@@ -1,4 +1,4 @@
-// =====================================================
+﻿// =====================================================
 // MANDAAR REAL PRODUCT CATALOG
 // Data sourced directly from the shop's product listing (May 2026)
 // 25 products across 10 categories
@@ -14,7 +14,7 @@ export type Product = {
   name: string;
   category: string; // slug for filtering: "cashews", "mamra", etc
   categoryLabel: string; // display label: "Cashews", "Mamra Almonds"
-  grade?: string; // "W320", "A5", "AB Gold" — shown on card under name
+  grade?: string; // "W320", "A5", "AB Gold" - shown on card under name
   pricePerKg?: number; // shown as reference if available
   weights: WeightOption[];
   description: string;
@@ -181,7 +181,7 @@ export const products: Product[] = [
       { weight: "750g", price: 960 },
       { weight: "1kg", price: 1249 },
     ],
-    description: "320 cashews per pound — large, milky-cream, full kernels. Goa-grade, hand-sorted.",
+    description: "320 cashews per pound - large, milky-cream, full kernels. Goa-grade, hand-sorted.",
     bowlBg: cashewBowl,
   },
   {
@@ -197,7 +197,7 @@ export const products: Product[] = [
       { weight: "750g", price: 1040 },
       { weight: "1kg", price: 1349 },
     ],
-    description: "Even bigger than W320 — 240 to a pound. Our top-grade jumbo cashews.",
+    description: "Even bigger than W320 - 240 to a pound. Our top-grade jumbo cashews.",
     bowlBg: cashewBowl,
   },
   {
@@ -213,7 +213,7 @@ export const products: Product[] = [
       { weight: "750g", price: 1390 },
       { weight: "1kg", price: 1799 },
     ],
-    description: "Our finest cashews — hand-graded twice before they reach the shelf. Buttery, snow-white halves.",
+    description: "Our finest cashews - hand-graded twice before they reach the shelf. Buttery, snow-white halves.",
     bowlBg: cashewBowl,
     badge: "MANDAAR SP.",
   },
@@ -264,7 +264,7 @@ export const products: Product[] = [
       { weight: "750g", price: 1110 },
       { weight: "1kg", price: 1449 },
     ],
-    description: "Our top selection of American almonds — uniformly large, deep-flavoured, hand-checked.",
+    description: "Our top selection of American almonds - uniformly large, deep-flavoured, hand-checked.",
     bowlBg: almondBowl,
     badge: "MANDAAR SP.",
   },
@@ -283,7 +283,7 @@ export const products: Product[] = [
       { weight: "750g", price: 3950 },
       { weight: "1kg", price: 5199 },
     ],
-    description: "The pinnacle of Iranian Mamra. Densest, oiliest, sweetest. A5 grade is the top-tier classification — rare and revered.",
+    description: "The pinnacle of Iranian Mamra. Densest, oiliest, sweetest. A5 grade is the top-tier classification - rare and revered.",
     bowlBg: mamraBowl,
     badge: "FINEST GRADE",
   },
@@ -300,7 +300,7 @@ export const products: Product[] = [
       { weight: "750g", price: 3900 },
       { weight: "1kg", price: 4799 },
     ],
-    description: "A4-grade Iranian Mamra — rich, oily, and characteristically darker than American almonds. A connoisseur's choice.",
+    description: "A4-grade Iranian Mamra - rich, oily, and characteristically darker than American almonds. A connoisseur's choice.",
     bowlBg: mamraBowl,
     badge: "PREMIUM",
   },
@@ -333,7 +333,7 @@ export const products: Product[] = [
       { weight: "750g", price: 3110 },
       { weight: "1kg", price: 4099 },
     ],
-    description: "ES-grade Mamra — our entry-level into the world of authentic Iranian almonds. Distinctly richer than any commercial almond.",
+    description: "ES-grade Mamra - our entry-level into the world of authentic Iranian almonds. Distinctly richer than any commercial almond.",
     bowlBg: mamraBowl,
   },
 
@@ -383,7 +383,7 @@ export const products: Product[] = [
       { weight: "750g", price: 1450 },
       { weight: "1kg", price: 1899 },
     ],
-    description: "Each pistachio individually sorted by hand. Uniformly large, deepest green kernels — our finest.",
+    description: "Each pistachio individually sorted by hand. Uniformly large, deepest green kernels - our finest.",
     bowlBg: pistachioBowl,
     badge: "MANDAAR SP.",
   },
@@ -402,7 +402,7 @@ export const products: Product[] = [
       { weight: "750g", price: 1350 },
       { weight: "1kg", price: 1749 },
     ],
-    description: "Largest grade of dried Anjeer. Soft, plump, naturally sweet — no added sugar.",
+    description: "Largest grade of dried Anjeer. Soft, plump, naturally sweet - no added sugar.",
     bowlBg: figBowl,
   },
   {
@@ -494,7 +494,7 @@ export const products: Product[] = [
     weights: [
       { weight: "250g", price: 260 },
     ],
-    description: "NB2-grade munakka. Traditional Indian munakka — perfect for kheer, panjiri, and ayurvedic preparations.",
+    description: "NB2-grade munakka. Traditional Indian munakka - perfect for kheer, panjiri, and ayurvedic preparations.",
     bowlBg: munakkaBowl,
   },
 
@@ -508,7 +508,7 @@ export const products: Product[] = [
     weights: [
       { weight: "250g", price: 860 },
     ],
-    description: "Buttery, creamy, the world's most luxurious nut. Whole kernels — perfect for baking or snacking neat.",
+    description: "Buttery, creamy, the world's most luxurious nut. Whole kernels - perfect for baking or snacking neat.",
     bowlBg: macadamiaBowl,
     badge: "EXOTIC",
   },
@@ -521,7 +521,7 @@ export const products: Product[] = [
     weights: [
       { weight: "250g", price: 750 },
     ],
-    description: "Rich, buttery pecan halves. The signature nut of American baking — and a revelation eaten plain.",
+    description: "Rich, buttery pecan halves. The signature nut of American baking - and a revelation eaten plain.",
     bowlBg: pecanBowl,
     badge: "EXOTIC",
   },
@@ -537,7 +537,7 @@ export const products: Product[] = [
     weights: [
       { weight: "1kg", price: 1050 },
     ],
-    description: "Whole Kashmiri walnuts in the shell. 36+ size grade — large, plump, perfect for cracking fresh.",
+    description: "Whole Kashmiri walnuts in the shell. 36+ size grade - large, plump, perfect for cracking fresh.",
     bowlBg: akhrotShellBowl,
   },
   {
@@ -563,7 +563,7 @@ export const products: Product[] = [
       { weight: "250g", price: 570 },
       { weight: "1kg", price: 2260 },
     ],
-    description: "Our finest walnut halves — hand-cracked, hand-sorted to keep only the largest, lightest, intact halves. The walnut connoisseur's choice.",
+    description: "Our finest walnut halves - hand-cracked, hand-sorted to keep only the largest, lightest, intact halves. The walnut connoisseur's choice.",
     bowlBg: walnutBowl,
     badge: "MANDAAR SP.",
   },
@@ -581,7 +581,7 @@ export function getProductById(id: string) {
   return products.find((p) => p.id === id);
 }
 
-// Featured products for homepage — curated picks across categories
+// Featured products for homepage - curated picks across categories
 export function getFeaturedProducts() {
   const featuredIds = [
     "mamra-a5", // Premium showcase

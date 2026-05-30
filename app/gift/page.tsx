@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import Reveal from "@/components/Reveal";
 import { ArrowRightIcon, GiftIcon, CheckIcon } from "lucide-react";
@@ -9,7 +9,7 @@ const hampers = [
     name: "Classic",
     price: 1499,
     mrp: 1699,
-    desc: "A thoughtful starter hamper with our most-loved varieties — perfect for friends, neighbours, and small acknowledgements.",
+    desc: "A thoughtful starter hamper with our most-loved varieties - perfect for friends, neighbours, and small acknowledgements.",
     items: [
       "Medjoul Dates · 250g",
       "California Almonds · 250g",
@@ -25,7 +25,7 @@ const hampers = [
     name: "Regal",
     price: 2999,
     mrp: 3400,
-    desc: "Our signature gift — a generous spread of premium varieties in a brass-finish tin, designed to impress.",
+    desc: "Our signature gift - a generous spread of premium varieties in a brass-finish tin, designed to impress.",
     items: [
       "Medjoul Dates · 400g",
       "Ajwa Dates · 250g",
@@ -44,7 +44,7 @@ const hampers = [
     name: "Maharaja",
     price: 4999,
     mrp: 5800,
-    desc: "The most generous hamper we make. Presented in a traditional carved wooden box — fit for the occasions that matter most.",
+    desc: "The most generous hamper we make. Presented in a traditional carved wooden box - fit for the occasions that matter most.",
     items: [
       "All Regal items, larger sizes",
       "Premium Saffron · 1g",
@@ -188,7 +188,7 @@ export default function GiftPage() {
               Ordering 50+ <span className="italic text-saffron-light">hampers</span>?
             </h2>
             <p className="text-cream/70 text-base md:text-lg mb-9 leading-relaxed">
-              Corporate gifting, wedding sangeets, festival packs for entire offices — talk to us. Custom packaging, branded cards, and significant volume pricing available.
+              Corporate gifting, wedding sangeets, festival packs for entire offices - talk to us. Custom packaging, branded cards, and significant volume pricing available.
             </p>
             <Link
               href="/contact"

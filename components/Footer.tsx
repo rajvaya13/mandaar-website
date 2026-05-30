@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 
 const shopLinks = [
   { label: "All Products", href: "/shop" },
@@ -56,12 +56,12 @@ export default function Footer() {
             </h3>
             <p className="text-cream/70 text-sm leading-relaxed max-w-sm mb-5">
               Udaipur&apos;s most-trusted name in premium dry fruits since 1987.
-              Three generations of craft, curation, and care — now delivered to
+              Three generations of craft, curation, and care - now delivered to
               your doorstep.
             </p>
             <address className="not-italic text-cream/60 text-xs leading-relaxed max-w-sm mb-6">
               Shop No. 406, Bhupalpura Main Road, Udaipole<br />
-              Near Gattani Hospital, Udaipur — 313001<br />
+              Near Gattani Hospital, Udaipur - 313001<br />
               Rajasthan, India
             </address>
             <div className="flex gap-3">

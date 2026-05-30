@@ -9,17 +9,17 @@ const slides = [
   {
     eyebrow: "From The Aravalli Hills",
     title: ["A Taste of", "Rajasthani Royalty,", "delivered fresh."],
-    desc: "Mandaar hand-picks the finest dates, nuts, and dried fruits — sourced directly from origin farms in Kashmir, Jordan, Iran, and beyond, curated in the heart of Udaipur.",
+    desc: "Mandaar hand-picks the finest nuts and dried fruits, sourced directly from origin farms in Kashmir, Iran, California, and beyond, curated in the heart of Udaipur.",
   },
   {
-    eyebrow: "Harvest Season 2026",
-    title: ["Fresh Medjoul", "Dates have", "just arrived."],
-    desc: "The first crate of the season landed at our Udaipur warehouse this week. Hand-picked, plump, and unforgettably sweet — while stocks last.",
+    eyebrow: "Iran's Finest Grade",
+    title: ["Mamra Almonds,", "the connoisseur's", "first choice."],
+    desc: "Authentic Iranian Mamra in 4 grades, from ES to the rare A5. Denser, oilier, and sweeter than American almonds; hand-graded at our Udaipur warehouse.",
   },
   {
     eyebrow: "From Kashmir's Orchards",
     title: ["The lightest", "Kashmiri walnut", "halves you'll find."],
-    desc: "Direct from Pampore's hill orchards. Cracked, sorted, and vacuum-sealed within 48 hours — the way real walnuts are meant to taste.",
+    desc: "Direct from Pampore's hill orchards. Cracked, sorted, and vacuum-sealed within 48 hours, the way real walnuts are meant to taste.",
   },
 ];
 
@@ -212,10 +212,10 @@ export default function Hero() {
                 />
                 <div>
                   <div className="font-semibold text-sm text-mandaar">
-                    Medjoul Dates
+                    Mamra Badam
                   </div>
                   <div className="text-[11px] text-warm-gray">
-                    Premium · ₹1,355/kg
+                    Iran · From ₹4,099/kg
                   </div>
                 </div>
               </div>
@@ -225,7 +225,7 @@ export default function Hero() {
                   ★ ★ ★ ★ ★
                 </div>
                 <div className="text-[11px] text-warm-gray font-medium whitespace-nowrap">
-                  4.9 · 2,847 reviews
+                  Hand-picked Premium
                 </div>
               </div>
             </div>

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import Link from "next/link";
@@ -55,7 +55,7 @@ export default function SignupPage() {
             <span className="italic text-saffron">inner circle</span>.
           </h1>
           <p className="text-warm-gray text-base leading-relaxed mb-9">
-            Premium dry fruits, hand-picked from origin farms — now at your fingertips. Create an account in 30 seconds.
+            Premium dry fruits, hand-picked from origin farms - now at your fingertips. Create an account in 30 seconds.
           </p>
 
           <ul className="space-y-4">

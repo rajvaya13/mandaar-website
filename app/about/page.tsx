@@ -11,20 +11,20 @@ const milestones = [
   {
     year: "The Years Since",
     title: "Building direct partnerships",
-    desc: "Trip by trip, supplier by supplier — we replace middlemen with farmer-direct relationships. Kashmiri walnut growers in Pampore. Jordanian Medjoul date farms in the Jordan Valley. Iranian pistachio orchards in Kerman. Turkish apricot growers in Malatya.",
+    desc: "Trip by trip, supplier by supplier, we replace middlemen with farmer-direct relationships. Kashmiri walnut growers in Pampore. Iranian Mamra almond producers in Sahand. Californian almond growers. Turkish anjeer growers in Aydin.",
   },
   {
     year: "2026",
     title: "Mandaar goes online",
-    desc: "Eight years after opening, Mandaar launches online — the same hand-picked, hand-graded products, now shipping across India in 2–4 days.",
+    desc: "Eight years after opening, Mandaar launches online. The same hand-picked, hand-graded products, now shipping across India in 2 to 4 days.",
   },
 ];
 
 const values = [
-  "Hand-picked directly from origin farms — no middlemen",
+  "Hand-picked directly from origin farms, no middlemen",
   "Vacuum-sealed within hours of arrival at our warehouse",
   "Every batch tasted and graded by the owner before being sold",
-  "100% natural — no sulphur, no added sugar, no preservatives",
+  "100% natural, no sulphur, no added sugar, no preservatives",
   "FSSAI certified, GST registered, fully traceable supply chain",
   "If you're not happy with any order, we replace it. No questions.",
 ];
@@ -33,7 +33,7 @@ export default function AboutPage() {
   return (
     <>
       <PageHeader
-        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Heritage" }]}
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Our Story" }]}
         eyebrow="Our Story"
         title={
           <>
@@ -50,27 +50,26 @@ export default function AboutPage() {
             <div className="space-y-6 text-warm-gray leading-[1.85] text-base md:text-lg">
               <p>
                 It started in 2018, on a quiet stretch of Bhupalpura Main Road
-                in Udaipur — a few hundred metres from Gattani Hospital, in a
+                in Udaipur, a few hundred metres from Gattani Hospital, in a
                 shop no bigger than a small living room.
               </p>
               <p>
-                The founding rule was simple: every date, every nut, every
-                batch had to be hand-graded and personally tasted by the owner
-                before it could go on the shelves. If it didn&apos;t pass, it
-                didn&apos;t sell — it went straight back to the supplier.
+                The founding rule was simple: every nut, every batch had to be
+                hand-graded and personally tasted by the owner before it could
+                go on the shelves. If it didn&apos;t pass, it didn&apos;t sell.
+                It went straight back to the supplier.
               </p>
               <p>
                 Customers came at first from the next neighbourhood, then from
-                across Udaipur, and word travelled — to Mount Abu, Chittor, even
+                across Udaipur, and word travelled to Mount Abu, Chittor, even
                 Jaipur. The shop is still on the same road.
               </p>
               <p>
                 What&apos;s grown since: we now travel ourselves to Kashmir
                 each October for the walnut harvest, to Pampore where
                 light-coloured halves come straight from the cold-press shed.
-                We&apos;ve flown to Jordan to walk the Medjoul date farms in
-                the Jordan Valley. Our pistachios come from a single grower in
-                Kerman, Iran. Apricots from Malatya in eastern Turkey.
+                Our Mamra almonds come from Iranian growers in Sahand. Cashews
+                from Goan estates. Anjeer from Malatya in eastern Turkey.
               </p>
               <p>
                 No middlemen. No imported-then-resold. Every product on our
@@ -84,7 +83,7 @@ export default function AboutPage() {
           </Reveal>
           <Reveal delay={200}>
             <div className="font-display italic text-saffron text-2xl text-center mt-12">
-              — Mandaar
+              - Mandaar
             </div>
           </Reveal>
         </div>

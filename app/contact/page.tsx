@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import PageHeader from "@/components/PageHeader";
@@ -67,7 +67,7 @@ export default function ContactPage() {
                     </h3>
                     <address className="not-italic text-warm-gray text-sm leading-relaxed">
                       Shop No. 406, Bhupalpura Main Road, Udaipole<br />
-                      Near Gattani Hospital, Udaipur — 313001<br />
+                      Near Gattani Hospital, Udaipur - 313001<br />
                       Rajasthan, India
                     </address>
                   </div>
@@ -182,7 +182,7 @@ export default function ContactPage() {
                 Have a question?
               </h2>
               <p className="text-warm-gray text-sm mb-8">
-                Bulk order, wedding hampers, or just curious about a product — write away.
+                Bulk order, wedding hampers, or just curious about a product - write away.
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-4">

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import Link from "next/link";
@@ -88,7 +88,7 @@ export default function ProductCard({ product }: { product: Product }) {
           )}
         </div>
 
-        {/* Weight selector — only show if multiple weights */}
+        {/* Weight selector - only show if multiple weights */}
         {product.weights.length > 1 && (
           <div className="flex flex-wrap gap-1.5 mb-3">
             {product.weights.map((w, idx) => (
@@ -112,7 +112,7 @@ export default function ProductCard({ product }: { product: Product }) {
           </div>
         )}
 
-        {/* Price block — pushed to bottom via mt-auto */}
+        {/* Price block - pushed to bottom via mt-auto */}
         <div className="mt-auto pt-1">
           <div className="flex items-baseline justify-between mb-4">
             <div className="flex items-baseline gap-2.5 flex-wrap">

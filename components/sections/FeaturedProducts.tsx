@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import ProductCard from "@/components/ProductCard";
 import { getFeaturedProducts, products } from "@/lib/products";
@@ -20,7 +20,7 @@ export default function FeaturedProducts() {
               <span className="italic text-saffron">chosen by you</span>
             </h2>
             <p className="text-warm-gray text-base leading-relaxed">
-              Our most-loved picks — hand-graded in-house and vacuum-sealed
+              Our most-loved picks - hand-graded in-house and vacuum-sealed
               fresh. Shipped across India.
             </p>
           </div>

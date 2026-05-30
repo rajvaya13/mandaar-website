@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { ShoppingBagIcon, ArrowRightIcon } from "lucide-react";
 
 export default function CartPage() {
@@ -19,7 +19,7 @@ export default function CartPage() {
           Nothing here <span className="italic text-saffron">yet</span>
         </h1>
         <p className="text-warm-gray text-base mb-9 leading-relaxed">
-          Your cart is empty — but it doesn&apos;t have to stay that way.
+          Your cart is empty - but it doesn&apos;t have to stay that way.
           Browse our curated selection of premium dry fruits.
         </p>
         <Link

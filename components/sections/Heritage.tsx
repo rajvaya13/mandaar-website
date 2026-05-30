@@ -1,4 +1,4 @@
-import Reveal from "@/components/Reveal";
+﻿import Reveal from "@/components/Reveal";
 
 export default function Heritage() {
   return (
@@ -19,85 +19,102 @@ export default function Heritage() {
 
       <div className="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-[1fr_1.1fr] gap-12 lg:gap-20 items-center">
 
-        {/* === HERITAGE VISUAL — vintage certificate with year 2018 === */}
+        {/* ===== NEW HERITAGE VISUAL - clean saffron-on-green plaque ===== */}
         <Reveal variant="fade">
           <div className="relative aspect-[4/5] max-w-md mx-auto lg:mx-0">
-            <div className="absolute inset-0 rounded-sm bg-cream shadow-[0_30px_80px_rgba(0,0,0,0.4)] grain">
-              <div className="absolute inset-3 border-2 border-mandaar/80 rounded-sm">
-                <div className="absolute inset-2 border border-saffron/60 rounded-sm" />
-              </div>
+            {/* Vertical plaque shape with saffron-tinted background and ornate border */}
+            <div
+              className="absolute inset-0 rounded-[3rem] flex flex-col items-center justify-center text-center p-10 md:p-14"
+              style={{
+                background:
+                  "linear-gradient(160deg, rgba(212,160,23,0.15) 0%, rgba(212,160,23,0.03) 50%, rgba(212,160,23,0.10) 100%)",
+                border: "1px solid rgba(212,160,23,0.30)",
+                boxShadow:
+                  "inset 0 0 80px rgba(212,160,23,0.06), 0 30px 80px rgba(0,0,0,0.35)",
+              }}
+            >
+              {/* Inner subtle frame */}
+              <div
+                className="absolute inset-4 rounded-[2.5rem] pointer-events-none"
+                style={{ border: "1px solid rgba(212,160,23,0.15)" }}
+              />
 
+              {/* Corner ornaments */}
               {[
-                "top-4 left-4",
-                "top-4 right-4 rotate-90",
-                "bottom-4 right-4 rotate-180",
-                "bottom-4 left-4 -rotate-90",
+                "top-7 left-7",
+                "top-7 right-7 rotate-90",
+                "bottom-7 right-7 rotate-180",
+                "bottom-7 left-7 -rotate-90",
               ].map((pos, i) => (
                 <svg
                   key={i}
-                  className={`absolute ${pos} w-8 h-8 text-mandaar`}
-                  viewBox="0 0 32 32"
+                  className={`absolute ${pos} w-6 h-6 text-saffron/40 pointer-events-none`}
+                  viewBox="0 0 24 24"
                 >
                   <path
-                    d="M2 2 L18 2 M2 2 L2 18 M2 8 Q 8 8 8 2 M5 14 Q 14 14 14 5"
+                    d="M2 2 L14 2 M2 2 L2 14 M2 7 Q 7 7 7 2"
                     stroke="currentColor"
-                    strokeWidth="0.8"
+                    strokeWidth="1"
                     fill="none"
                   />
-                  <circle cx="2" cy="2" r="1.5" fill="currentColor" />
+                  <circle cx="2" cy="2" r="1.2" fill="currentColor" />
                 </svg>
               ))}
 
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-mandaar p-12 text-center">
-                <div className="text-[9px] tracking-[0.4em] uppercase mb-4 text-mandaar/60">
-                  Certificate of
-                </div>
-                <div className="font-display italic text-3xl md:text-4xl mb-8 text-rust">
-                  Origin
-                </div>
-
-                <div className="flex items-center gap-3 mb-8">
-                  <div className="w-12 h-px bg-mandaar/40" />
-                  <svg width="20" height="20" viewBox="0 0 20 20" className="text-saffron">
-                    <path
-                      d="M10 1 L11 7 L17 7 L12 11 L14 17 L10 14 L6 17 L8 11 L3 7 L9 7 Z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                  <div className="w-12 h-px bg-mandaar/40" />
-                </div>
-
-                <div className="font-display text-7xl md:text-8xl font-light leading-none mb-4 text-mandaar">
-                  2018
-                </div>
-
-                <div className="text-[11px] tracking-[0.3em] uppercase mb-8 text-mandaar/60">
-                  The Year We Opened
-                </div>
-
-                <div className="border-t border-mandaar/20 pt-6 mt-auto">
-                  <div className="text-[10px] tracking-[0.25em] uppercase text-mandaar/70 mb-1">
-                    Sourced & Curated In
-                  </div>
-                  <div className="font-display italic text-xl text-rust">
-                    Udaipur, Rajasthan
-                  </div>
-                </div>
+              {/* Top ornamental flourish */}
+              <div className="flex items-center gap-4 mb-6 md:mb-8 relative z-10">
+                <div className="w-12 md:w-16 h-px bg-saffron/40" />
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 20 20"
+                  className="text-saffron"
+                >
+                  <path
+                    d="M10 1 L11 7 L17 7 L12 11 L14 17 L10 14 L6 17 L8 11 L3 7 L9 7 Z"
+                    fill="currentColor"
+                  />
+                </svg>
+                <div className="w-12 md:w-16 h-px bg-saffron/40" />
               </div>
 
-              <div
-                className="absolute inset-0 pointer-events-none rounded-sm opacity-30"
-                style={{
-                  background:
-                    "radial-gradient(ellipse 80% 70% at 50% 50%, transparent 40%, rgba(139, 90, 43, 0.1) 70%, rgba(139, 90, 43, 0.2) 100%)",
-                }}
-              />
+              {/* Eyebrow */}
+              <div className="text-saffron/80 text-[10px] tracking-[0.4em] uppercase mb-5 md:mb-6 relative z-10">
+                Established
+              </div>
+
+              {/* Big saffron year */}
+              <div className="font-display text-saffron text-[6.5rem] md:text-[8rem] font-light leading-none mb-4 relative z-10">
+                2018
+              </div>
+
+              {/* Tagline */}
+              <div className="text-cream/60 text-[10px] tracking-[0.35em] uppercase mb-7 md:mb-9 relative z-10">
+                Year of Founding
+              </div>
+
+              {/* Subtle divider */}
+              <div className="w-24 h-px bg-saffron/30 mb-5 md:mb-6 relative z-10" />
+
+              {/* Location */}
+              <div className="font-display italic text-cream/95 text-lg md:text-xl relative z-10 mb-5 md:mb-7">
+                Udaipur, Rajasthan
+              </div>
+
+              {/* Bottom ornamental flourish */}
+              <div className="flex items-center gap-4 relative z-10">
+                <div className="w-12 md:w-16 h-px bg-saffron/40" />
+                <div className="w-1.5 h-1.5 rounded-full bg-saffron/60" />
+                <div className="w-12 md:w-16 h-px bg-saffron/40" />
+              </div>
             </div>
 
-            {/* Wax seal */}
-            <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 w-24 h-24 md:w-28 md:h-28 rounded-full flex items-center justify-center text-center text-cream p-3 shadow-[0_15px_30px_rgba(139,58,46,0.6)] rotate-12 z-10"
+            {/* Wax seal medallion - bottom right */}
+            <div
+              className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 w-24 h-24 md:w-28 md:h-28 rounded-full flex items-center justify-center text-center text-cream p-3 shadow-[0_15px_30px_rgba(139,58,46,0.6)] rotate-12 z-10"
               style={{
-                background: "radial-gradient(circle at 30% 30%, #a85447, #8b3a2e 60%, #5c2519 100%)",
+                background:
+                  "radial-gradient(circle at 30% 30%, #a85447, #8b3a2e 60%, #5c2519 100%)",
               }}
             >
               <div>
@@ -129,23 +146,23 @@ export default function Heritage() {
           </Reveal>
           <Reveal delay={200}>
             <p className="text-cream/75 text-base md:text-lg leading-[1.8] mb-6">
-              Mandaar opened in 2018, in a small shop on Bhupalpura Main Road —
+              Mandaar opened in 2018, in a small shop on Bhupalpura Main Road,
               just steps from Gattani Hospital. The founding rule was simple:
-              never sell a date, nut, or dried fruit that hadn&apos;t been
-              hand-graded and personally tasted first.
+              never sell a nut or dried fruit that hadn&apos;t been hand-graded
+              and personally tasted first.
             </p>
           </Reveal>
           <Reveal delay={280}>
             <p className="text-cream/75 text-base md:text-lg leading-[1.8]">
               Today, we source directly from origin growers in Kashmir, Iran,
-              Jordan, Turkey, and California. Hand-graded with care. No
-              middlemen, no shortcuts, no imported-then-resold. The same shop,
-              the same standard.
+              California, Turkey, and Goa. Hand-graded with care. No middlemen,
+              no shortcuts, no imported-then-resold. The same shop, the same
+              standard.
             </p>
           </Reveal>
           <Reveal delay={360}>
             <div className="font-display italic text-saffron-light text-xl mt-8">
-              — Mandaar
+              - Mandaar
             </div>
           </Reveal>
         </div>
